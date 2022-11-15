@@ -13,3 +13,5 @@ C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\obj\Debug\net6.0\CVIServ
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\obj\Debug\net6.0\refint\CVIServiceWebInfra.dll
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\obj\Debug\net6.0\CVIServiceWebInfra.pdb
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\obj\Debug\net6.0\ref\CVIServiceWebInfra.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\bin\Debug\net6.0\CVIServiceLibShared.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebInfra\bin\Debug\net6.0\CVIServiceLibShared.pdb

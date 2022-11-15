@@ -829,3 +829,11 @@ C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\CVIServic
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\refint\CVIServiceWebApp.dll
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\CVIServiceWebApp.pdb
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\ref\CVIServiceWebApp.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\CVIServiceLibShared.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\CVIServiceLibShared.pdb
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\CVIServiceLibShared.dll.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\CVIServiceLibShared.pdb.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\CVIServiceLibShared.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\CVIServiceLibShared.pdb
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\9wDhmlF+.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\QrSoPUhz.gz

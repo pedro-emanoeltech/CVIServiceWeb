@@ -8,10 +8,16 @@
     ".NETCoreApp,Version=v6.0": {
       "CVIServiceWebInfra/1.0.0": {
         "dependencies": {
+          "CVIServiceLibShared": "1.0.0",
           "CVIServiceWebDomain": "1.0.0"
         },
         "runtime": {
           "CVIServiceWebInfra.dll": {}
+        }
+      },
+      "CVIServiceLibShared/1.0.0": {
+        "runtime": {
+          "CVIServiceLibShared.dll": {}
         }
       },
       "CVIServiceWebDomain/1.0.0": {
@@ -23,6 +29,11 @@
   },
   "libraries": {
     "CVIServiceWebInfra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CVIServiceLibShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

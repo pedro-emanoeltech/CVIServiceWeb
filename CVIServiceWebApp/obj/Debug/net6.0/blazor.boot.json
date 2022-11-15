@@ -196,17 +196,19 @@
       "mscorlib.dll": "sha256-SboUbkX8s5RVQGtnN5Q67MBZW0I\/P3aeEMENJq8gv8M=",
       "netstandard.dll": "sha256-lZ8L5iiSghlvyt2ie2YdBYAtJbVa4mvpvBX3W9ihjLc=",
       "System.Private.CoreLib.dll": "sha256-jECkJy2Sjpl59QEL3nO3p8nwKGXvnJpXaKQF\/+MTw04=",
+      "CVIServiceLibShared.dll": "sha256-OQ9CQ0KtwKmUruxnBss8S8GscCaPgnoM2UTl\/NwUHFY=",
       "CVIServiceWebDomain.dll": "sha256-LnmQrdLi0zimvGCazxFvYxXxaY97Yxkk+pY8JCu+VKQ=",
-      "CVIServiceWebInfra.dll": "sha256-QqnSceyd93vrvVR+L4\/c4q0FuGUHjAvlxns++B0Jtko=",
-      "CVIServiceWebApp.dll": "sha256-3GhCI7uipjUH2DUFBn1X1\/L5kIBezEKhV4ctJa8fSiQ="
+      "CVIServiceWebInfra.dll": "sha256-8NyyEiJKXGHNjCTmw0ov1nc7h5pkJu1\/WgaCSYd2JOA=",
+      "CVIServiceWebApp.dll": "sha256-F67Id7T47Vih9dPxdTB4N5AdCn+7EUX0PsKz+0HmBbs="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "CVIServiceWebInfra.pdb": "sha256-EK6u05Bkc38xWU8RHBk7gYATL9ZTsMauIhaw+YNy5oE=",
+      "CVIServiceWebInfra.pdb": "sha256-pqz5sZELHk76+sCkEiscd1sCiXFaNl34BicADI6lpbs=",
+      "CVIServiceLibShared.pdb": "sha256-lIP\/5YYzIfCck4+pdScHMrrE8\/B\/gLrNOKLM84+VnJc=",
       "CVIServiceWebDomain.pdb": "sha256-FvRn8EZwgXnBUwW2wmB6mhW2Han9JWZkIgLAaQvx0A8=",
-      "CVIServiceWebApp.pdb": "sha256-5bjzKVPJ2sIek\/JRNKh4qKz1lq3cqAdqIcz+C3Gjf0c="
+      "CVIServiceWebApp.pdb": "sha256-sIx8dVDUKx+ufYgkq5Z5qxUBhkeTdrIqe7fhB4dceIg="
     },
     "runtime": {
       "dotnet.6.0.10.13ucms1226.js": "sha256-KtM3Wrooexmrt5NmqvZfWoDPtNIe6wZqLopR6ToqUPg=",

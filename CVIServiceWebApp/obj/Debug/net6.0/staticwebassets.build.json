@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "NqLBaoIP67AqiFNMp6q2iWcnOYNtge5xqTNZNAt3pIk=",
+  "Hash": "0KkOJnjU/K9d8RYIhKBOQZbPStUmXCWyRsnjQSBsiNY=",
   "Source": "CVIServiceWebApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.10\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.dll",
+      "SourceId": "CVIServiceWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CVIServiceLibShared.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\bin\\Debug\\net6.0\\CVIServiceLibShared.dll"
+    },
+    {
+      "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.pdb",
+      "SourceId": "CVIServiceWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CVIServiceLibShared.pdb",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "symbol",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\bin\\Debug\\net6.0\\CVIServiceLibShared.pdb"
     },
     {
       "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceWebApp.dll",
@@ -4250,6 +4284,23 @@
       "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
     },
     {
+      "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\obj\\Debug\\net6.0\\build-gz\\9wDhmlF+.gz",
+      "SourceId": "CVIServiceWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CVIServiceLibShared.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.dll"
+    },
+    {
       "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\obj\\Debug\\net6.0\\build-gz\\A48EFrdW.gz",
       "SourceId": "CVIServiceWebApp",
       "SourceType": "Computed",
@@ -5761,6 +5812,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.CSharp.dll"
+    },
+    {
+      "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\obj\\Debug\\net6.0\\build-gz\\QrSoPUhz.gz",
+      "SourceId": "CVIServiceWebApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/CVIServiceLibShared.pdb.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.pdb",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\bin\\Debug\\net6.0\\wwwroot\\_framework\\CVIServiceLibShared.pdb"
     },
     {
       "Identity": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\obj\\Debug\\net6.0\\build-gz\\qsPF2Af9.gz",
