@@ -1,0 +1,117 @@
+{
+  "version": 3,
+  "targets": {
+    "net6.0": {
+      "CVIServiceLibShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CVIServiceLibShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CVIServiceLibShared.dll": {}
+        }
+      },
+      "CVIServiceWebDomain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CVIServiceWebDomain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CVIServiceWebDomain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CVIServiceLibShared/1.0.0": {
+      "type": "project",
+      "path": "../../CVIServiceLibShared/CVIServiceLibShared/CVIServiceLibShared.csproj",
+      "msbuildProject": "../../CVIServiceLibShared/CVIServiceLibShared/CVIServiceLibShared.csproj"
+    },
+    "CVIServiceWebDomain/1.0.0": {
+      "type": "project",
+      "path": "../CVIServiceWebDomain/CVIServiceWebDomain.csproj",
+      "msbuildProject": "../CVIServiceWebDomain/CVIServiceWebDomain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net6.0": [
+      "CVIServiceLibShared >= 1.0.0",
+      "CVIServiceWebDomain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebInfra\\CVIServiceWebInfra.csproj",
+      "projectName": "CVIServiceWebInfra",
+      "projectPath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebInfra\\CVIServiceWebInfra.csproj",
+      "packagesPath": "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\",
+      "outputPath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebInfra\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Pedro Emanoel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net6.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Repository\\Services\\Lib": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "projectReferences": {
+            "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj": {
+              "projectPath": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj"
+            },
+            "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj": {
+              "projectPath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net6.0": {
+        "targetAlias": "net6.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

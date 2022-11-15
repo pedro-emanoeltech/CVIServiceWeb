@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "CVIServiceWebInfra/1.0.0": {
+        "dependencies": {
+          "CVIServiceWebDomain": "1.0.0"
+        },
+        "runtime": {
+          "CVIServiceWebInfra.dll": {}
+        }
+      },
+      "CVIServiceWebDomain/1.0.0": {
+        "runtime": {
+          "CVIServiceWebDomain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CVIServiceWebInfra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CVIServiceWebDomain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
