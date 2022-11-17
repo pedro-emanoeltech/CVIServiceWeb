@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,6 +15,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CVIServiceWebInfra\CVIServiceWebInfra.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Login\" />
+    <Folder Include="Pages\Servicos\" />
+    <Folder Include="Pages\Vagas\" />
+    <Folder Include="Pages\Perfil\" />
   </ItemGroup>
 
 </Project>

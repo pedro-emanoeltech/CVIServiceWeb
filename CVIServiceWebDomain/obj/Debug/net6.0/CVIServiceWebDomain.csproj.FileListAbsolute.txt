@@ -10,3 +10,6 @@ C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\obj\Debug\net6.0\CVISer
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\obj\Debug\net6.0\refint\CVIServiceWebDomain.dll
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\obj\Debug\net6.0\CVIServiceWebDomain.pdb
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\obj\Debug\net6.0\ref\CVIServiceWebDomain.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\bin\Debug\net6.0\CVIServiceLibShared.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\bin\Debug\net6.0\CVIServiceLibShared.pdb
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebDomain\obj\Debug\net6.0\CVIServiceWebDomain.csproj.CopyComplete

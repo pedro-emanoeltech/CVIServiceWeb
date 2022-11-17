@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "CVIServiceWebDomain/1.0.0": {
+        "dependencies": {
+          "CVIServiceLibShared": "1.0.0"
+        },
         "runtime": {
           "CVIServiceWebDomain.dll": {}
+        }
+      },
+      "CVIServiceLibShared/1.0.0": {
+        "runtime": {
+          "CVIServiceLibShared.dll": {}
         }
       }
     }
   },
   "libraries": {
     "CVIServiceWebDomain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CVIServiceLibShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -94,7 +94,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj": {
+                "projectPath": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -156,9 +160,6 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj": {
-                "projectPath": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj"
-              },
               "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj": {
                 "projectPath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj"
               }

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "CVIServiceLibShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CVIServiceLibShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CVIServiceLibShared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CVIServiceLibShared/1.0.0": {
+      "type": "project",
+      "path": "../../CVIServiceLibShared/CVIServiceLibShared/CVIServiceLibShared.csproj",
+      "msbuildProject": "../../CVIServiceLibShared/CVIServiceLibShared/CVIServiceLibShared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "CVIServiceLibShared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\": {},
@@ -40,7 +59,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj": {
+              "projectPath": "C:\\Repository\\Services\\CVIServiceLibShared\\CVIServiceLibShared\\CVIServiceLibShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

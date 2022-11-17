@@ -7,7 +7,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\CVIServiceLibShared\CVIServiceLibShared\CVIServiceLibShared.csproj" />
 	  <ProjectReference Include="..\CVIServiceWebDomain\CVIServiceWebDomain.csproj" />
 	</ItemGroup>
 
