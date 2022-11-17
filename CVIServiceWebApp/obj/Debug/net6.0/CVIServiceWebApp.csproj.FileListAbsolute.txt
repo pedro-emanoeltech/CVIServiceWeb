@@ -837,3 +837,11 @@ C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\CVIServic
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\CVIServiceLibShared.pdb
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\9wDhmlF+.gz
 C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\QrSoPUhz.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.ThemeManager.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.ThemeManager.dll.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\wwwroot\_framework\MudBlazor.dll.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\MudBlazor.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\bin\Debug\net6.0\MudBlazor.ThemeManager.dll
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\S+1CHz9r.gz
+C:\Repository\Services\CVIServiceWeb\CVIServiceWebApp\obj\Debug\net6.0\build-gz\IQHGbmrx.gz

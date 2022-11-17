@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "me7NbtNr1U7dJW5ONsunD9V9lG58UNz18RdBiwIBqEi7VsaI/Um0iFScytHteSAUI46RaC79+p1xqV6/fIGiLA==",
+  "dgSpecHash": "8pGHTudlobOfbaUwl3l+KcSAQCwkLDN+ktg/8GD6P3MBgmWUzqmxyuPODDZQtQGpggo2lVjKnt7vcbvnwb/Ljw==",
   "success": true,
   "projectFilePath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\CVIServiceWebApp.csproj",
   "expectedPackageFiles": [
@@ -28,6 +28,8 @@
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.jsinterop\\6.0.10\\microsoft.jsinterop.6.0.10.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.jsinterop.webassembly\\6.0.10\\microsoft.jsinterop.webassembly.6.0.10.nupkg.sha512",
+    "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\mudblazor\\6.1.2\\mudblazor.6.1.2.nupkg.sha512",
+    "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\mudblazor.thememanager\\1.0.7\\mudblazor.thememanager.1.0.7.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
