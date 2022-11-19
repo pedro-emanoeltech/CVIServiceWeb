@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="AutoMapper\" />
     <Folder Include="Pages\Login\" />
     <Folder Include="Pages\Servicos\" />
     <Folder Include="Pages\Vagas\" />

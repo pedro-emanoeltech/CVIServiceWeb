@@ -2,14 +2,9 @@
 using CVIServiceLibShared.App.Response;
 using CVIServiceLibShared.Constants;
 using CVIServiceWebDomain.Interfaces.IRepository;
-using System.Diagnostics;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Json;
-using System.Web;
-using System;
-
-
 
 namespace CVIServiceWebInfra.Repository
 {

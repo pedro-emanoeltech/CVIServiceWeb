@@ -2,7 +2,7 @@
 using CVIServiceWebDomain.Interfaces.IRepository;
 using CVIServiceWebInfra.Repository;
 
-namespace CVIServiceWebApp.Settings
+namespace CVIServiceWeb.Settings
 {
     public static class DependencyInjectionConfiguration
     {
