@@ -1,25 +1,53 @@
 ﻿@inherits ComponentBase;
 
-<MudAppBar Dense="true" Elevation="1">
-    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" />
-    <MudText Typo="Typo.subtitle1" Class="ml-3">Curriculo Inteligente</MudText>
-    <MudSpacer />
 
-    <MudMenu Dense="true">
-        <ActivatorContent>            
-            <MudChip Icon="@Icons.Material.Filled.Person" Color="Color.Primary">Conta</MudChip>
-        </ActivatorContent>
-        <ChildContent>
+    <MudAppBar Elevation="1">
+        <MudSpacer />
+        <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
+              Height="45" Width="200" Elevation="25" Class="rounded-lg" />
+        <MudSpacer />    
+        <MudMenu Color="Color.Primary">
+             <ActivatorContent>
+                <MudAvatar Image="@ImagePerfil" />
+             </ActivatorContent>
+             <ChildContent>
             <MudMenuItem Icon="@Icons.Filled.PersonPin" Href="/conta" Disabled="true">Editar Conta</MudMenuItem>
-        </ChildContent>        
-    </MudMenu>    
-</MudAppBar>
-<MudDrawer Open="true" ClipMode="DrawerClipMode.Always" Elevation="2" Variant="@DrawerVariant.Mini" PreserveOpenState="false">
-    <MudNavMenu Class="mud-width-full">
-        <MudNavLink Href="/conta" Icon="@Icons.Filled.Security" Disabled="false">Conta</MudNavLink>
-    </MudNavMenu>
-</MudDrawer>
-
+            </ChildContent>
+        </MudMenu>
+     </MudAppBar>
+<div style="height: 100vh; width:100%; margin-top:64px; padding:0px 0px 0px 0px;" >
+     <MudPaper Elevation="2"  >
+            <MudStack Row="true">
+            <MudButtonGroup Color="Color.Primary" Variant="Variant.Outlined">
+                <MudButton Href="/Conta">
+                <MudPaper Class="pa-3 ma-2" Elevation="2">
+                    <MudIcon Icon="@Icons.Filled.Badge" Size="Size.Large" />
+                    <MudText>Conta</MudText>
+                </MudPaper>
+            </MudButton>
+                <MudButton Href="/Conta">
+                    
+                        <MudIcon Icon="@Icons.Filled.Badge" Size="Size.Large" />
+                        <MudDivider />
+                        <MudText>Conta</MudText>
+                   
+                </MudButton>
+                <MudButton Href="/Conta">
+                    
+                    <MudIcon Icon="@Icons.Filled.Badge" Size="Size.Large" />
+                    <MudText>Conta</MudText>
+                </MudButton>
+            </MudButtonGroup>
+            
+          
+                <MudSpacer />
+            
+            </MudStack>
+           
+         
+     </MudPaper>
+   
+</div>
 
 @code {
    
