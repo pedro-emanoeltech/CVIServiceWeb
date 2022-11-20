@@ -22,6 +22,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/BasePages/Dialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFzZVBhZ2VzXERpYWxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/BasePages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmFzZVBhZ2VzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/Conta/Conta.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29udGFcQ29udGEucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -40,6 +48,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/Login/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/Servicos/Servicos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2Vydmljb3NcU2Vydmljb3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Pages/Vagas/Vagas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVmFnYXNcVmFnYXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Repository/Services/CVIServiceWeb/CVIServiceWebApp/Shared/SurveyPrompt.razor]

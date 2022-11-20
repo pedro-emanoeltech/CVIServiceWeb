@@ -3,9 +3,19 @@
 
 <MudThemeProvider Theme="MyCustomTheme" DefaultScrollbar="true" />
 <MudSnackbarProvider />
+<AuthorizeView>
+    <Authorized>
 <MudLayout>
     <NavMenu />
+    <MudMainContent Style="padding: 30px 0px 0px 0px">
+        @Body
+    </MudMainContent>
 </MudLayout>
+ </Authorized>
+    <NotAuthorized>
+    <Login></Login>
+    </NotAuthorized>
+</AuthorizeView>
 
 
 

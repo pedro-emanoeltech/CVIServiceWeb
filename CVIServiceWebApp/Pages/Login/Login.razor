@@ -1,0 +1,47 @@
+﻿
+<PageTitle>Login</PageTitle>
+
+<MudContainer Fixed="true" Style="height:100vh;">
+    <MudGrid Justify="Justify.Center" Class="mt-10">
+        <MudItem>
+            <MudPaper Elevation="2" MinWidth="360px" Square="true" Style="border-radius: 10px;">
+                <MudForm Class="pa-10">
+                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.h5" Color="Color.Surface">UPPER</MudText>
+                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.subtitle2">Entrar no Upper Web</MudText>
+                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.body2">Novo usuário? <MudLink Typo="Typo.body2" Href="/novaconta">Crie sua conta</MudLink> </MudText>
+
+                    <MudTextField Class="mb-3"
+                                  @bind-Value="Entity.Email"
+                                  For="@(() => Entity.Email)"
+                                  Immediate="true"
+                                  Label="E-mail"
+                                  Variant="Variant.Outlined"
+                                  Margin="Margin.Dense"
+                                  InputType="InputType.Email">
+                    </MudTextField>
+
+                    <MudTextField Class="mb-3"
+                                  @bind-Value="Entity.Senha"
+                                  For="@(() => Entity.Senha)"
+                                  Immediate="true"
+                                  Label="Senha"
+                                  Variant="Variant.Outlined"
+                                  Margin="Margin.Dense"
+                                  InputType="InputType.Password">
+                    </MudTextField>
+                </MudForm>
+                <MudGrid Justify="Justify.Center">
+                    <MudItem>
+                        <MudPaper Elevation="0" Class="mx-auto pa-3">
+                            <MudLink Typo="Typo.body2" Href="/recuperarsenha"> Esqueceu a senha? </MudLink>
+                        </MudPaper>
+                    </MudItem>
+                    <MudItem>
+                        <MudButton Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.KeyboardArrowRight" Color="Color.Default" OnClick="@(async () => await LoginAsync())">Entrar</MudButton>
+                    </MudItem>
+                </MudGrid>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+</MudContainer>
+
