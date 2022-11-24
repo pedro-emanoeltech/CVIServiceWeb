@@ -3,7 +3,7 @@ using CVIServiceLibShared.App.Response;
 
 namespace CVIServiceWebDomain.Interfaces.IRepository
 {
-    public interface IContaRepository : IBaseRepository<ContaRequest, ContaResponse> 
+    public interface ILoginRepository : IBaseRepository<AuthenticateRequest, AuthenticateResponse> 
     {
         Task<AuthenticateResponse?> Authentcate(AuthenticateRequest T);
     }

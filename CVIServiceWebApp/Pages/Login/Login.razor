@@ -1,4 +1,5 @@
-﻿
+﻿@page "/login"
+
 <PageTitle>Login</PageTitle>
 
 <MudContainer Fixed="true" Style="height:100vh;">
@@ -6,8 +7,6 @@
         <MudItem>
             <MudPaper Elevation="2" MinWidth="360px" Square="true" Style="border-radius: 10px;">
                 <MudForm Class="pa-10">
-                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.h5" Color="Color.Surface">UPPER</MudText>
-                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.subtitle2">Entrar no Upper Web</MudText>
                     <MudText class="mb-4" Align="Align.Left" Typo="Typo.body2">Novo usuário? <MudLink Typo="Typo.body2" Href="/novaconta">Crie sua conta</MudLink> </MudText>
 
                     <MudTextField Class="mb-3"
@@ -37,7 +36,7 @@
                         </MudPaper>
                     </MudItem>
                     <MudItem>
-                        <MudButton Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.KeyboardArrowRight" Color="Color.Default" OnClick="@(async () => await LoginAsync())">Entrar</MudButton>
+                        <MudButton Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.KeyboardArrowRight" Color="Color.Default" OnClick="@(async () => await Authentcate())">Entrar</MudButton>
                     </MudItem>
                 </MudGrid>
             </MudPaper>

@@ -5,10 +5,10 @@ using CVIServiceWebDomain.Interfaces.IServices;
 
 namespace CVIServiceWebDomain.Services
 {
-    public class ContaServices : BaseServices<ContaRequest, ContaResponse>,IContaServices
+    public class LoginServices : BaseServices<AuthenticateRequest, AuthenticateResponse>,ILoginServices
     {
-        private readonly IContaRepository _repository;
-        public ContaServices(IContaRepository repository) : base(repository)
+        private readonly ILoginRepository _repository;
+        public LoginServices(ILoginRepository repository) : base(repository)
         {
             _repository = repository;
         }

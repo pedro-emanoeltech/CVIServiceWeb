@@ -1,7 +1,8 @@
 ﻿using CVIServiceLibShared.App.Request;
 using CVIServiceWebDomain.Interfaces.IServices;
 using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.JSInterop;
 using MudBlazor;
 
 
@@ -9,21 +10,31 @@ namespace CVIServiceWebApp.Pages.Login
 {
     public partial class Login
     {
+        [Inject] private AuthenticationStateProvider authenticationProvider { get; set; }
+
+        [Inject] protected IJSRuntime js { get; set; } = default!;
+
         private AuthenticateRequest Entity = new AuthenticateRequest();
+
         public bool logou = false;
         [Inject] protected ISnackbar Snackbar { get; set; } = default!;
-        [Inject] protected IContaServices _contaServices { get; set; } = default!;
- 
-        private string id { get; set; } = "a8594b55-8890-40ba-b500-3abc8f3a8348";
-        public async Task LoginAsync()
+        [Inject] protected ILoginServices _LoginServices { get; set; } = default!;
+        [Inject] private NavigationManager NavigationManager { get; set; } = default!;
+        public async Task Authentcate()
         {
             try
             {
-                var token = await _contaServices.Get(Guid.Parse(id));
-                if (token is not null)
+                var token = await _LoginServices.Authentcate(Entity);
+                if (token is not null && !string.IsNullOrEmpty(token.Token))
                 {
-                    await authStateProvider.Login(token?.!);
-                    navigation.NavigateTo("/");
+                    var authservices = (CustomAuthenticationState)authenticationProvider;
+                    await authservices.UpdateAuthState(token);
+                    NavigationManager.NavigateTo("/",true);
+                }
+                else
+                {
+                    await js.InvokeVoidAsync("alert","Usuario ou senha Invalido !");
+                    return;
                 }
                 logou = true;
             }
@@ -36,7 +47,7 @@ namespace CVIServiceWebApp.Pages.Login
 
         public void Cadastrar()
         {
-            Navigation.NavigateTo("/novaconta");
+            NavigationManager.NavigateTo("/novaconta");
         }
     }
 }

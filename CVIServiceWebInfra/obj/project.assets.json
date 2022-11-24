@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "CVIServiceLibShared/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
           "bin/placeholder/CVIServiceLibShared.dll": {}
         },
@@ -14,7 +14,7 @@
       },
       "CVIServiceWebDomain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CVIServiceLibShared": "1.0.0"
         },
@@ -40,7 +40,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "CVIServiceWebDomain >= 1.0.0"
     ]
   },
@@ -66,7 +66,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -75,8 +75,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {
             "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj": {
               "projectPath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebDomain\\CVIServiceWebDomain.csproj"
@@ -91,8 +91,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "imports": [
           "net461",
           "net462",
@@ -109,7 +109,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

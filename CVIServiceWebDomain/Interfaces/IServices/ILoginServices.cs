@@ -1,9 +1,9 @@
 ﻿using CVIServiceLibShared.App.Request;
 using CVIServiceLibShared.App.Response;
 
-namespace CVIServiceWebDomain.Interfaces.IRepository
+namespace CVIServiceWebDomain.Interfaces.IServices
 {
-    public interface IContaRepository : IBaseRepository<ContaRequest, ContaResponse> 
+    public interface ILoginServices : IBaseServices<AuthenticateRequest, AuthenticateResponse>
     {
         Task<AuthenticateResponse?> Authentcate(AuthenticateRequest T);
     }

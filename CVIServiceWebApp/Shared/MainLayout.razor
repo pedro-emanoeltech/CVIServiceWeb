@@ -1,22 +1,35 @@
 ﻿@inherits LayoutComponentBase
 
 
+
+@inject NavigationManager navigationManager
+
 <MudThemeProvider Theme="MyCustomTheme" DefaultScrollbar="true" />
+<MudDialogProvider FullWidth="true"
+                   MaxWidth="MaxWidth.ExtraSmall"
+                   CloseButton="true"
+                   DisableBackdropClick="true"
+                   NoHeader="false"
+                   Position="DialogPosition.Center"
+                   CloseOnEscapeKey="true" />
 <MudSnackbarProvider />
 <AuthorizeView>
     <Authorized>
-<MudLayout>
-    <NavMenu />
-    <MudMainContent Style="padding: 30px 0px 0px 0px">
-        @Body
-    </MudMainContent>
-</MudLayout>
- </Authorized>
+        <MudLayout>
+            <NavMenu />
+            <MudMainContent Style="padding: 30px 0px 0px 0px">
+                @Body
+            </MudMainContent>
+        </MudLayout>
+     </Authorized>
     <NotAuthorized>
-    <Login></Login>
+        <Login/>
     </NotAuthorized>
 </AuthorizeView>
 
+@code{
+
+}
 
 
 
