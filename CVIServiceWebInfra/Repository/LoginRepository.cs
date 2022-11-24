@@ -23,7 +23,8 @@ namespace CVIServiceWebInfra.Repository
                 var conteudo = new StringContent(Entity, Encoding.UTF8, MediaTypeNames.Application.Json);
                 //httpClient.DefaultRequestHeaders.Authorization = new HttpCredentialsHeaderValue("Bearer", access_token);
                 //httpClient.DefaultRequestHeaders.Accept.Add(new HttpMediaTypeWithQualityHeaderValue("application/json"));
-                var result = await HttpClient.PostAsync(Endpoint.BASEURI + _resource+"/"+Resource.LOGIN, conteudo);
+                var uri = Endpoint.BASEURI + _resource + "/" + Resource.LOGIN;
+                var result = await HttpClient.PostAsync(uri, conteudo);
 
                 if (result.IsSuccessStatusCode)
                 {

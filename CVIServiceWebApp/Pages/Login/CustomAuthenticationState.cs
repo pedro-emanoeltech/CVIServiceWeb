@@ -76,7 +76,7 @@ namespace CVIServiceWebApp.Pages.Login
             }
             catch{ }
 
-            return result;
+            return result!;
         }
 
       

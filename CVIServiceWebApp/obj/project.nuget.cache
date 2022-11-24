@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/wXtCRO4Fzpw5jnKj9laTrnhBn4cwoIFyWzzyPOCPiNCuAxNGpIQd5aUYMqMnYt18c48HApSnZkY5pxFyJKCuw==",
+  "dgSpecHash": "/H+3gMwHI/GboRvk4OEG4WAaP+C5cL9pM8OuaJZNBFxab1bynxx2rEE8LCv8/NLnCpYa583F8cPhDNyQqEgBuQ==",
   "success": true,
   "projectFilePath": "C:\\Repository\\Services\\CVIServiceWeb\\CVIServiceWebApp\\CVIServiceWebApp.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.0\\microsoft.aspnetcore.components.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.0\\microsoft.aspnetcore.components.webassembly.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.authentication\\7.0.0\\microsoft.aspnetcore.components.webassembly.authentication.7.0.0.nupkg.sha512",
+    "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\7.0.0\\microsoft.aspnetcore.components.webassembly.devserver.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.0\\microsoft.aspnetcore.metadata.7.0.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Pedro Emanoel\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",

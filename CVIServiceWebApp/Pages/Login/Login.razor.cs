@@ -10,7 +10,7 @@ namespace CVIServiceWebApp.Pages.Login
 {
     public partial class Login
     {
-        [Inject] private AuthenticationStateProvider authenticationProvider { get; set; }
+        [Inject] private AuthenticationStateProvider? authenticationProvider { get; set; }
 
         [Inject] protected IJSRuntime js { get; set; } = default!;
 
@@ -27,7 +27,7 @@ namespace CVIServiceWebApp.Pages.Login
                 var token = await _LoginServices.Authentcate(Entity);
                 if (token is not null && !string.IsNullOrEmpty(token.Token))
                 {
-                    var authservices = (CustomAuthenticationState)authenticationProvider;
+                    var authservices = (CustomAuthenticationState)authenticationProvider!;
                     await authservices.UpdateAuthState(token);
                     NavigationManager.NavigateTo("/",true);
                 }
@@ -36,12 +36,12 @@ namespace CVIServiceWebApp.Pages.Login
                     await js.InvokeVoidAsync("alert","Usuario ou senha Invalido !");
                     return;
                 }
-                logou = true;
+           
             }
             catch (Exception e)
             {
                 Snackbar.Add($"Não foi possível realizar o login do usuário. (Erro: {e.Message})");
-                logou = true;
+               
             }
         }
 
