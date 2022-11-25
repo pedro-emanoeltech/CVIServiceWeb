@@ -4,7 +4,9 @@ using CVIServiceLibShared.Constants;
 using CVIServiceWebDomain.Interfaces.IRepository;
 using System.Net.Mime;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace CVIServiceWebInfra.Repository
 {
@@ -29,7 +31,7 @@ namespace CVIServiceWebInfra.Repository
                 if (result.IsSuccessStatusCode)
                 {
                     var resp = await result.Content.ReadAsStringAsync();
-                    var EntityResult = JsonSerializer.Deserialize<AuthenticateResponse>(resp);
+                    var EntityResult = JsonSerializer.Deserialize<AuthenticateResponse>(resp, GetOptionsUTF());
                     return EntityResult!;
                 }
                 else
@@ -42,6 +44,18 @@ namespace CVIServiceWebInfra.Repository
             {
                 throw new Exception(e.Message);
             }
+        }
+        protected static JsonSerializerOptions GetOptionsUTF()
+        {
+            var optionsUTF = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+            };
+
+            optionsUTF.Converters.Add(new JsonStringEnumConverter());
+            return optionsUTF;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CVIServiceLibShared.App.Request;
+using CVIServiceWebApp.ServicesApp;
 using CVIServiceWebDomain.Interfaces.IServices;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
@@ -33,7 +34,7 @@ namespace CVIServiceWebApp.Pages.Login
                 }
                 else
                 {
-                    await js.InvokeVoidAsync("alert","Usuario ou senha Invalido !");
+                    Snackbar.Add("Usuario ou senha Invalido !",Severity.Warning);
                     return;
                 }
            

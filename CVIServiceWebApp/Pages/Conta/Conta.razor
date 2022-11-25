@@ -1,12 +1,22 @@
 ﻿@page "/conta"
+@using CVIServiceWebApp.Components;
 
-<div style="height: 100vh; width:100%; margin-top:64px; padding:0px 5px 0px 5px;">
-    <MudOverlay Visible="@Carregando">
-        <MudProgressCircular Indeterminate="true" />
-    </MudOverlay>
-    <MudText Typo="Typo.h6" Class="ml-3">Configuraçoes de Conta</MudText>
-<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
-    <MudGrid>
+
+@attribute [Authorize(Roles = "Fisica")]
+@inherits Container
+@{
+    base.BuildRenderTree(__builder);
+}
+
+
+    @code {
+    public override RenderFragment RenderCorpoContainer()
+    {
+        return
+    @<text>
+        <MudText Typo="Typo.h6" Class="ml-3">Configuraçoes de Conta</MudText>
+        <MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+        <MudGrid>
             <MudItem xs="12" sm="6" md="12">
                 <MudPaper Elevation="2" Class="pa-4" Style="height: 100%" Height="600px">
                     <MudTabs Outlined="true" Position="Position.Left" Rounded="true" Border="true"
@@ -15,7 +25,8 @@
                             <MudText></MudText>
                         </MudTabPanel>
                         <MudTabPanel Text="Alterar Senha">
-                            <MudButton OnClick="modelo"></MudButton>
+                            <MudIconButton OnClick="modelo">Testar</MudIconButton>
+                            <MudTextField Value="@texto"></MudTextField>
                         </MudTabPanel>
                         <MudTabPanel Text="Excluir Conta">
                             <MudText>Content Three</MudText>
@@ -24,78 +35,8 @@
             </MudPaper>
         </MudItem>
     </MudGrid>
-</MudContainer>
+    </MudContainer>
+    </text>;
+    }
 
-</div>
-
-@{
-    base.BuildRenderTree(__builder);
-}
-
-@code {
-    
-}<div style="height: 100vh; width:100%; margin:0px; padding:0px 5px 0px 5px;">
-     
-    <MudOverlay Visible="@Carregando">
-        <MudProgressCircular Indeterminate="true" />
-    </MudOverlay>
-    <MudToolBar>
-        <MudText Typo="Typo.h5" Class="ml-3">Permissões de usuário</MudText>
-    </MudToolBar>
-<MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
-    <MudGrid>
-        <MudItem xs="12" sm="6" md="12">
-            <MudPaper Elevation="2" Class="pa-4" Style="height: 100%; " Width="60%" >
-                <MudStack Row="true" Justify="Justify.SpaceBetween">
-                    <MudPaper Elevation="0"><MudText Typo="Typo.h6" >Defina um perfil de usuário</MudText></MudPaper>
-                    <MudPaper Elevation="0">@*<MudButtonNew Disabled="EditarPermissoes" OnClick="IncluirPerfil" Text="Incluir Perfil" />*@</MudPaper>
-                </MudStack>
-                <MudGrid>
-                    <MudItem md="4">
-                            <MudPaper Elevation="0">
-                             @*   <MudSelect Disabled="EditarPermissoes" Label="Perfil" @bind-Value="@perfil" Text="@(perfil.Nome)">
-                                @foreach (var item in perfils)
-                                {
-                                    <MudSelectItem Value="@item">@item.Nome</MudSelectItem>
-                                }
-                            </MudSelect>*@
-                        </MudPaper>
-                    </MudItem>
-                        <MudItem md="6">
-                            <MudPaper Elevation="0">
-                            @*<MudButtonEdit  Variant="Variant.Outlined" Disabled="EditarPermissoes" OnClick="CarregarPermissoes" Text="Editar Permissões" />*@
-                        </MudPaper>
-                    </MudItem>
-                </MudGrid>
-             </MudPaper>
-        </MudItem>
-            <MudItem xs="12" sm="6" md="12">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 100%" Height="330px">
-                    <MudText Typo="Typo.h6" Class="ml-3">Modulos</MudText>
-              
-                        <MudPaper Elevation="0" Class="pa-4">
-                          
-                    </MudPaper>
-                        <MudPaper Elevation="0" Class="pa-4">
-                            <MudGrid Justify="Justify.Center">
-                                <MudItem>
-                                   
-                            </MudItem>
-                        </MudGrid>
-                    </MudPaper>
-                      
-                            
-            </MudPaper>
-        </MudItem>
-    </MudGrid>
-</MudContainer>
-
-</div>
-
-@{
-    base.BuildRenderTree(__builder);
-}
-
-@code {
-    
 }

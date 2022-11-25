@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace CVIServiceWebApp.components
+namespace CVIServiceWebApp.Components
 {
     public partial class Base : ComponentBase
     {

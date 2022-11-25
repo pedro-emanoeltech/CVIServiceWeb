@@ -27,9 +27,13 @@
                 </MudPaper>
             </MudStack>
         </MudPaper>
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
         <MudNavLink Href="/Perfil" Icon="@Icons.Filled.Badge" Disabled="false">Perfil</MudNavLink>
         <MudNavLink Href="/Vagas" Icon="@Icons.Filled.BusinessCenter" Disabled="false">Vagas</MudNavLink>
         <MudNavLink Href="/Servicos" Icon="@Icons.Filled.Handyman" Disabled="false">Serviços</MudNavLink>
+        <MudSpacer class="m-2" />
+            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+            <MudNavLink OnClick="@(() => Sair())" Icon="@Icons.Filled.Logout" Disabled="false">Sair</MudNavLink>
     </MudNavMenu>
     
 </MudDrawer>

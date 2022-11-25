@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="AutoMapper\" />
-    <Folder Include="Pages\Perfil\" />
   </ItemGroup>
 
 </Project>

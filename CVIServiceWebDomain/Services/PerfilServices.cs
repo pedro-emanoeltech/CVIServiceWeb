@@ -5,9 +5,9 @@ using CVIServiceWebDomain.Interfaces.IServices;
 
 namespace CVIServiceWebDomain.Services
 {
-    public class ContaServices : BaseServices<ContaRequest, ContaResponse>,IContaServices
+    public class PerfilServices : BaseServices<PerfilRequest, PerfilResponse>, IPerfilServices
     {
-        public ContaServices(IContaRepository repository) : base(repository)
+        public PerfilServices(IPerfilRepository repository) : base(repository)
         {
            
         }

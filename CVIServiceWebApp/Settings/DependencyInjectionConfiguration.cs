@@ -1,4 +1,5 @@
-﻿using CVIServiceWebApp.Pages.Login;
+﻿using CVIServiceWebApp.IServicesApp;
+using CVIServiceWebApp.ServicesApp;
 using CVIServiceWebDomain.Interfaces.IRepository;
 using CVIServiceWebDomain.Interfaces.IServices;
 using CVIServiceWebDomain.Services;
@@ -17,7 +18,7 @@ namespace CVIServiceWeb.Settings
             services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<ILoginServices, LoginServices>();
 
-
+            services.AddScoped<ILoginAuthProviderServicesApp, LoginAuthProviderServicesApp>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationState>();
 
             return services;

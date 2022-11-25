@@ -1,0 +1,27 @@
+﻿@page "/Perfil"
+@using CVIServiceLibShared.App.Response;
+@using CVIServiceWebApp.Components;
+
+@attribute [Authorize(Roles = "Fisica")]
+
+@inherits Container;
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    public override RenderFragment RenderCorpoContainer()
+    {
+        return
+    @<text>
+        <MudText Typo="Typo.h6" Class="ml-3">Perfil</MudText>
+        <MudDataGrid Items="@Perfis">
+        <Columns>
+            <Column T="PerfilResponse" Field="Nome" Title="Nome" />
+            <Column T="PerfilResponse" Field="Apelido" Title="Apelido" />
+            </Columns>
+        </MudDataGrid>
+    </text>;
+    }
+}
