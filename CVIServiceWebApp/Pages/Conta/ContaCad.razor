@@ -1,0 +1,76 @@
+﻿@page "/contacadastro"
+@using CVIServiceLibShared.Constants.Enums;
+@using CVIServiceWebApp.Components;
+
+
+@attribute [Authorize(Roles = "Fisica")]
+@inherits Container
+@{
+    base.BuildRenderTree(__builder);
+}
+
+
+    @code {
+    public override RenderFragment RenderCorpoContainer()
+    {
+        return
+    @<text>
+        <MudContainer Fixed="true" Style="height:100vh; margin-top:100px; padding:0px 5px 0px 5px;">
+    <MudGrid Justify="Justify.Center" Class="mt-10">
+          <MudItem>
+            <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false" Spacing="3">
+            <MudPaper Class="py-1 px-3" Elevation="0">
+                <MudSpacer />
+                <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
+                        Height="75" Width="300" Elevation="25" Class="rounded-lg" />
+                <MudSpacer />
+            </MudPaper>
+        <MudTabs Elevation="2" Rounded="true" Centered="true" Class="my-6" Color="Color.Dark">
+                            <MudTabPanel 
+                            Icon="@Icons.Filled.Person" 
+                            Text="FISICA"
+                                     OnClick="() => GetTipoContaCadastro(TipoConta.Fisica)">
+                <MudPaper Class="pa-4">
+                    <MudStack Spacing="4">
+                        <CVITextField @bind-Value="_conta.Email"
+                                  InputType="InputType.Email"
+                                  LimiteCaracter="50"
+                                  Label="E-mail"></CVITextField>
+                        <MudStack Row="true">
+                            <CVITextField @bind-Value="_conta.Senha"
+                                       InputType="InputType.Password"
+                                                      LimiteCaracter="40"
+                                       TextoAjuda="Use oito ou mais caracteres com uma combinação de letras, números e símbolos"
+                                       Label="Senha"></CVITextField>
+                            <MudItem xs="12" sm="4" md="12">
+                                <CVITextField @bind-Value="confirmaSenha"
+                                          InputType="InputType.Password"
+                                          LimiteCaracter="40"
+                                          Label="Repetir Senha"></CVITextField>
+                            </MudItem>
+                        </MudStack>
+                        <MudButton Variant="Variant.Filled" OnClick="CadastrarConta" Color="Color.Primary" DisableElevation="true">Cadastrar</MudButton>
+                    </MudStack>
+                </MudPaper>
+            </MudTabPanel>
+            <MudTabPanel 
+            Icon="@Icons.Filled.ReduceCapacity" 
+            Text="JURIDICA"
+             OnClick="() => GetTipoContaCadastro(TipoConta.Juridica)">
+            <MudGrid>
+                <MudItem xs="12" sm="6" md="12">
+                
+            
+                        </MudItem>
+                </MudGrid>
+                <MudIconButton OnClick="CadastrarConta">Cadastrar</MudIconButton>
+            </MudTabPanel>
+        </MudTabs>
+        </MudStack>
+        </MudItem>
+        </MudGrid>
+    </MudContainer>
+    </text>;
+    }
+
+}

@@ -5,6 +5,7 @@ namespace CVIServiceWebApp.Shared
 {
     public partial class MainLayout : LayoutComponentBase
     {
+        [Inject] private NavigationManager NavigationManager { get; set; } = default!;
         private MudTheme MyCustomTheme = new MudTheme()
         {
         };

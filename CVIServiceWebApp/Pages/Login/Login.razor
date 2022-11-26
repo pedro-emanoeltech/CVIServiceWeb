@@ -5,10 +5,15 @@
 <MudContainer Fixed="true" Style="height:100vh;">
     <MudGrid Justify="Justify.Center" Class="mt-10">
         <MudItem>
+             <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false" Spacing="3" Style="height:300px;">
+            <MudPaper Class="py-1 px-3" Elevation="0">
+                <MudSpacer />
+                <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
+                          Height="75" Width="300" Elevation="25" Class="rounded-lg" />
+                <MudSpacer />
+            </MudPaper>
             <MudPaper Elevation="2" MinWidth="360px" Square="true" Style="border-radius: 10px;">
                 <MudForm Class="pa-10">
-                    <MudText class="mb-4" Align="Align.Left" Typo="Typo.body2">Novo usuário? <MudLink Typo="Typo.body2" Href="/novaconta">Crie sua conta</MudLink> </MudText>
-
                     <MudTextField Class="mb-3"
                                   @bind-Value="Entity.Email"
                                   For="@(() => Entity.Email)"
@@ -32,7 +37,9 @@
                 <MudGrid Justify="Justify.Center">
                     <MudItem>
                         <MudPaper Elevation="0" Class="mx-auto pa-3">
-                            <MudLink Typo="Typo.body2" Href="/recuperarsenha"> Esqueceu a senha? </MudLink>
+                            <MudText class="mb-4" Align="Align.Left" Typo="Typo.body2">
+                                <MudLink Typo="Typo.body2" Href="/contacadastro">Crie sua conta</MudLink>
+                            </MudText>
                         </MudPaper>
                     </MudItem>
                     <MudItem>
@@ -40,6 +47,7 @@
                     </MudItem>
                 </MudGrid>
             </MudPaper>
+            </MudStack>
         </MudItem>
     </MudGrid>
 </MudContainer>
