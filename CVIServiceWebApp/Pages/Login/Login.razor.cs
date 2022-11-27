@@ -41,7 +41,7 @@ namespace CVIServiceWebApp.Pages.Login
             }
             catch (Exception e)
             {
-                Snackbar.Add($"Não foi possível realizar o login do usuário. (Erro: {e.Message})");
+                Snackbar.Add($"Não foi possível realizar o login do usuário. (Erro: {e.Message})",Severity.Warning);
                
             }
         }

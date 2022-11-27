@@ -11,7 +11,6 @@ namespace CVIServiceWebApp.ServicesApp
     public class CustomAuthenticationState : AuthenticationStateProvider
     {
         private readonly ISessionStorageService _sessaoStorage;
-        private readonly HttpClient _httpClient;
         private ClaimsPrincipal _anonymous = new ClaimsPrincipal(new ClaimsIdentity());
 
         public CustomAuthenticationState(ISessionStorageService sessaoStorage)

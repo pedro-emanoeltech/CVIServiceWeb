@@ -1,43 +1,67 @@
 ﻿@inherits ComponentBase;
 
 
-    <MudAppBar Elevation="1">
-        <MudSpacer />
-        <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
-              Height="45" Width="200" Elevation="25" Class="rounded-lg" />
-        <MudSpacer />    
-        <MudMenu Color="Color.Primary">
-             <ActivatorContent>
-            <MudIconButton Icon="@Icons.Outlined.Settings" Color="Color.Inherit" Edge="Edge.Start"/>
-             </ActivatorContent>
-             <ChildContent>
+<MudAppBar Color="Color.Dark" Elevation="25" Dense="true">
+
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
+              Height="35" Width="160" Elevation="25" Class="rounded-lg" />
+    <MudSpacer />
+
+    <MudTextField Style="height:35px; width:500px;"
+                  MaxLength="500"
+                  @bind-Value="Search"
+                  Label="Busque oportunidade"
+                  Variant="Variant.Outlined"
+                  FullWidth="true"
+                  Margin="Margin.Dense"
+                  AdornmentIcon="@Icons.Filled.Search" />
+
+    <MudSpacer />
+
+    <MudMenu Color="Color.Primary">
+        <ActivatorContent>
+            <MudIconButton Icon="@Icons.Outlined.Settings" Color="Color.Inherit" Edge="Edge.Start" />
+        </ActivatorContent>
+        <ChildContent>
             <MudMenuItem Icon="@Icons.Filled.PersonPin" Href="/conta">Editar Conta</MudMenuItem>
-            </ChildContent>
-        </MudMenu>
-     </MudAppBar>
-<MudDrawer Open="true" ClipMode="DrawerClipMode.Always" Elevation="2" Variant="@DrawerVariant.Mini" PreserveOpenState="false">
+        </ChildContent>
+    </MudMenu>
+
+
+
+</MudAppBar>
+
+<MudDrawer ClipMode="DrawerClipMode.Always"
+           @bind-Open="DrawerOpen"
+           Elevation="2"
+           Variant="@DrawerVariant.Mini"
+           PreserveOpenState="false">
     <MudNavMenu Class="mud-width-full">
-        <MudPaper Elevation="1" Class="pa-3 ma-2">
-        <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false" >
-                <MudPaper >
-                    <MudAvatar Style="height:100px; width:100px; font-size:2rem;" Image="@ImagePerfil" />  
-                </MudPaper>
-                 <MudPaper >
-                    <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@NomePerfil</MudText>  
-                </MudPaper>
-            </MudStack>
-        </MudPaper>
-            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        @if (DrawerOpen)
+        {
+            <MudPaper Elevation="0" Class="pa-3 ma-2">
+                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                    <MudPaper Elevation="0">
+                        <MudAvatar Style="height:100px; width:100px; font-size:2rem;" Image="@ImagePerfil" />
+                    </MudPaper>
+                    <MudPaper Elevation="0">
+                        <MudText Typo="Typo.subtitle2" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
+                    </MudPaper>
+                </MudStack>
+            </MudPaper>
+        }
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
         <MudNavLink Href="/Perfil" Icon="@Icons.Filled.Badge" Disabled="false">Perfil</MudNavLink>
         <MudNavLink Href="/Vagas" Icon="@Icons.Filled.BusinessCenter" Disabled="false">Vagas</MudNavLink>
         <MudNavLink Href="/Servicos" Icon="@Icons.Filled.Handyman" Disabled="false">Serviços</MudNavLink>
         <MudSpacer class="m-2" />
-            <MudDivider DividerType="DividerType.Middle" Class="my-6" />
-            <MudNavLink OnClick="@(() => Sair())" Icon="@Icons.Filled.Logout" Disabled="false">Sair</MudNavLink>
+        <MudDivider DividerType="DividerType.Middle" Class="my-6" />
+        <MudNavLink OnClick="@(() => Sair())" Icon="@Icons.Filled.Logout" Disabled="false">Sair</MudNavLink>
     </MudNavMenu>
-    
+
 </MudDrawer>
-    
+
 @code {
-   
+
 }

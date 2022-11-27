@@ -10,7 +10,7 @@ namespace CVIServiceWebApp.Pages.Conta
     {
         [CascadingParameter]
         private Task<AuthenticationState>? authenticationState { get; set; }
-        [Inject] protected IJSRuntime js { get; set; } = default!;
+        [Inject] private IJSRuntime js { get; set; } = default!;
         public string? texto { get; set; } =  string.Empty;
 
         protected override void OnInitialized()

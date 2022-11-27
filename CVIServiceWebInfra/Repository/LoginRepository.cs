@@ -45,17 +45,6 @@ namespace CVIServiceWebInfra.Repository
                 throw new Exception(e.Message);
             }
         }
-        protected static JsonSerializerOptions GetOptionsUTF()
-        {
-            var optionsUTF = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true,
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                WriteIndented = true
-            };
-
-            optionsUTF.Converters.Add(new JsonStringEnumConverter());
-            return optionsUTF;
-        }
+       
     }
 }

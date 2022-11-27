@@ -1,6 +1,38 @@
-﻿@page "/Vagas"
-<h3>Vaga </h3>
+﻿@page "/"
+@inherits Container
 
-@code {
+@{
+    base.BuildRenderTree(__builder);
+}
+
+
+    @code {
+    public override RenderFragment RenderCorpoContainer()
+    {
+        return
+    @<text>
+        <MudText Typo="Typo.h6" Class="ml-3">Vagas</MudText>
+        <MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
+        <MudGrid>
+            <MudItem xs="12" sm="6" md="12">
+                <MudPaper Elevation="2" Class="pa-4" Style="height: 100%" Height="600px">
+                    <MudTabs Outlined="true" Position="Position.Left" Rounded="true" Border="true"
+                             ApplyEffectsToContainer="true" Class="mt-8" PanelClass="pa-6">
+                        <MudTabPanel Text="Informações pessoais">
+                            <MudText></MudText>
+                        </MudTabPanel>
+                        <MudTabPanel Text="Alterar Senha">
+                        
+                        </MudTabPanel>
+                        <MudTabPanel Text="Excluir Conta">
+                            <MudText>Content Three</MudText>
+                        </MudTabPanel>
+                    </MudTabs>
+            </MudPaper>
+        </MudItem>
+    </MudGrid>
+    </MudContainer>
+    </text>;
+    }
 
 }

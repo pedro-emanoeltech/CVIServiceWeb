@@ -9,6 +9,7 @@ namespace CVIServiceWebApp.Shared
         private MudTheme MyCustomTheme = new MudTheme()
         {
         };
+
         protected override void OnInitialized()
         {
             base.OnInitialized();

@@ -7,7 +7,6 @@ namespace CVIServiceWebApp.ServicesApp
 {
     public class LoginAuthProviderServicesApp : ILoginAuthProviderServicesApp
     {
-        private readonly HttpClient _httpClient;
         [Inject] private NavigationManager navigationManager { get; set; } = default!;
 
         public async Task Logout(AuthenticationStateProvider authenticationProvider)

@@ -4,7 +4,9 @@ using CVIServiceLibShared.Constants;
 using CVIServiceWebDomain.Interfaces.IRepository;
 using System.Net.Mime;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace CVIServiceWebInfra.Repository
 {
@@ -27,7 +29,7 @@ namespace CVIServiceWebInfra.Repository
                 if (result.IsSuccessStatusCode)
                 {
                     var response = await result.Content.ReadAsStringAsync();
-                    var entity = JsonSerializer.Deserialize<TResponse>(response);
+                    var entity = JsonSerializer.Deserialize<TResponse>(response, GetOptionsUTF());
                     return entity!;
                 }
                 else
@@ -50,7 +52,7 @@ namespace CVIServiceWebInfra.Repository
                 if (result.IsSuccessStatusCode)
                 {
                     var response = await result.Content.ReadAsStringAsync();
-                    var entities = JsonSerializer.Deserialize<IList<TResponse>>(response);
+                    var entities = JsonSerializer.Deserialize<IList<TResponse>>(response, GetOptionsUTF());
                     return entities!;
                 }
                 else
@@ -76,7 +78,7 @@ namespace CVIServiceWebInfra.Repository
                 if (result.IsSuccessStatusCode)
                 {
                     var resp = await result.Content.ReadAsStringAsync();
-                    var EntityResult = JsonSerializer.Deserialize<TResponse>(resp);
+                    var EntityResult = JsonSerializer.Deserialize<TResponse>(resp, GetOptionsUTF());
                     return EntityResult!;
                 }
                 else
@@ -102,7 +104,7 @@ namespace CVIServiceWebInfra.Repository
                 if (result.IsSuccessStatusCode)
                 {
                     var response = await result.Content.ReadAsStringAsync();
-                    var SerializerResult = JsonSerializer.Deserialize<TResponse>(response);
+                    var SerializerResult = JsonSerializer.Deserialize<TResponse>(response, GetOptionsUTF());
                     return SerializerResult!;
                 }
                 else
@@ -127,6 +129,19 @@ namespace CVIServiceWebInfra.Repository
             {
                 throw new Exception(e.Message);
             }
+        }
+
+        public static JsonSerializerOptions GetOptionsUTF()
+        {
+            var optionsUTF = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+            };
+
+            optionsUTF.Converters.Add(new JsonStringEnumConverter());
+            return optionsUTF;
         }
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace CVIServiceWebApp.Pages.Vagas
+﻿using CVIServiceWebApp.Components;
+
+namespace CVIServiceWebApp.Pages.Vagas
 {
-    public partial class Vagas 
+    public partial class Vagas : Container 
     {
 
     }

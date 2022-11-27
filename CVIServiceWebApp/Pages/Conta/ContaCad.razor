@@ -1,76 +1,73 @@
 ﻿@page "/contacadastro"
 @using CVIServiceLibShared.Constants.Enums;
-@using CVIServiceWebApp.Components;
+@inherits Base
 
-
-@attribute [Authorize(Roles = "Fisica")]
-@inherits Container
-@{
-    base.BuildRenderTree(__builder);
-}
-
-
-    @code {
-    public override RenderFragment RenderCorpoContainer()
-    {
-        return
-    @<text>
-        <MudContainer Fixed="true" Style="height:100vh; margin-top:100px; padding:0px 5px 0px 5px;">
-    <MudGrid Justify="Justify.Center" Class="mt-10">
-          <MudItem>
-            <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false" Spacing="3">
-            <MudPaper Class="py-1 px-3" Elevation="0">
-                <MudSpacer />
-                <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
-                        Height="75" Width="300" Elevation="25" Class="rounded-lg" />
-                <MudSpacer />
-            </MudPaper>
-        <MudTabs Elevation="2" Rounded="true" Centered="true" Class="my-6" Color="Color.Dark">
-                            <MudTabPanel 
-                            Icon="@Icons.Filled.Person" 
-                            Text="FISICA"
-                                     OnClick="() => GetTipoContaCadastro(TipoConta.Fisica)">
-                <MudPaper Class="pa-4">
-                    <MudStack Spacing="4">
-                        <CVITextField @bind-Value="_conta.Email"
-                                  InputType="InputType.Email"
-                                  LimiteCaracter="50"
-                                  Label="E-mail"></CVITextField>
-                        <MudStack Row="true">
-                            <CVITextField @bind-Value="_conta.Senha"
-                                       InputType="InputType.Password"
-                                                      LimiteCaracter="40"
-                                       TextoAjuda="Use oito ou mais caracteres com uma combinação de letras, números e símbolos"
-                                       Label="Senha"></CVITextField>
-                            <MudItem xs="12" sm="4" md="12">
-                                <CVITextField @bind-Value="confirmaSenha"
-                                          InputType="InputType.Password"
-                                          LimiteCaracter="40"
-                                          Label="Repetir Senha"></CVITextField>
-                            </MudItem>
-                        </MudStack>
-                        <MudButton Variant="Variant.Filled" OnClick="CadastrarConta" Color="Color.Primary" DisableElevation="true">Cadastrar</MudButton>
-                    </MudStack>
-                </MudPaper>
-            </MudTabPanel>
-            <MudTabPanel 
-            Icon="@Icons.Filled.ReduceCapacity" 
-            Text="JURIDICA"
-             OnClick="() => GetTipoContaCadastro(TipoConta.Juridica)">
-            <MudGrid>
-                <MudItem xs="12" sm="6" md="12">
-                
-            
-                        </MudItem>
-                </MudGrid>
-                <MudIconButton OnClick="CadastrarConta">Cadastrar</MudIconButton>
-            </MudTabPanel>
-        </MudTabs>
-        </MudStack>
-        </MudItem>
+<div style="height: 100vh; width:100%; margin-top:0px; padding:0px 0px 0px 0px; overflow-y: scroll">
+    <MudOverlay Visible="@Carregando">
+        <MudProgressCircular Color="Color.Success" Indeterminate=" true" />
+    </MudOverlay>
+    <MudContainer Fixed="true" Style="height:100vh;  padding:0px 5px 0px 5px;">
+        <MudGrid Justify="Justify.Center" Class="mt-10">
+            <MudItem>
+                <MudStack Justify="Justify.Center" AlignItems="AlignItems.Center" Row="false" Spacing="3">
+                    <MudPaper Elevation="0">
+                        <MudText class="mb-4" Align="Align.Left" Typo="Typo.h6" Color="Color.Surface">CVI-Curriculo Inteligente</MudText>
+                    </MudPaper>
+                    <MudTabs Elevation="2" Rounded="true" Centered="true" Class="my-6" Color="Color.Dark">
+                        <MudTabPanel Icon="@Icons.Filled.Person"
+                                     Text="Cadastro de Conta">
+                            <MudPaper Class="pa-4">
+                                <MudStack Spacing="4">
+                                    <MudItem xs="4">
+                                        <MudField Label="Tipo de conta" Variant="Variant.Text" InnerPadding="false">
+                                            <MudRadioGroup T="TipoConta" SelectedOption="TipoContaCadastro" SelectedOptionChanged=@((e)=> GetTipoContaCadastro(e))>
+                                                <MudRadio Option="TipoConta.Fisica">Pessoa</MudRadio>
+                                                <MudRadio Option="TipoConta.Juridica">Empresa</MudRadio>
+                                            </MudRadioGroup>
+                                        </MudField>
+                                    </MudItem>
+                                    <MudItem xs="8" sm="8">
+                                        <CVITextField @bind-Value="_conta.Email"
+                                                      InputType="InputType.Email"
+                                                      LimiteCaracter="50"
+                                                      Label="E-mail"></CVITextField>
+                                    </MudItem>
+                                    <MudStack Row="true">
+                                        <MudItem xs="6" sm="6">
+                                            <CVITextField @bind-Value=" _conta.Senha"
+                                                          InputType="InputType.Password"
+                                                          LimiteCaracter="40"
+                                                          TextoAjuda="Use oito ou mais caracteres com uma combinação de letras, números e símbolos"
+                                                          Label="Senha"></CVITextField>
+                                        </MudItem>
+                                        <MudItem xs="6" sm="5">
+                                            <CVITextField @bind-Value="confirmaSenha"
+                                                          InputType="InputType.Password"
+                                                          LimiteCaracter="40"
+                                                          Label="Repetir Senha"></CVITextField>
+                                        </MudItem>
+                                    </MudStack>
+                                    <MudStack Row="true">
+                                        <MudItem xs="8" sm="4">
+                                            <MudPaper Class="d-flex align-center pa-2 mx-2 my-2" Elevation="0">
+                                                <MudCheckBox Disabled="true" @bind-Checked="@termosDeUso"></MudCheckBox>
+                                                <MudButton Variant="Variant.Text" Color="Color.Error" OnClick="@OpenDialogTermosDeUso" ><b>TERMOS DE USO</b></MudButton>
+                                            </MudPaper>
+                                        </MudItem>
+                                        <MudItem xs="8" sm="4">
+                                            <MudPaper Class="d-flex align-center pa-2 mx-2 my-2" Elevation="0">
+                                                <MudCheckBox Disabled="true" @bind-Checked="@termosTratamentoDeDados"></MudCheckBox>
+                                                <MudButton Variant="Variant.Text" Color="Color.Error" OnClick="@OpenDialogTermosLGPD" ><b>TERMOS LGPD</b></MudButton>
+                                            </MudPaper>
+                                        </MudItem>
+                                    </MudStack>
+                                    <MudButton Variant="Variant.Filled" OnClick="CadastrarConta" Color="Color.Primary" DisableElevation="true">Cadastrar</MudButton>
+                                </MudStack>
+                            </MudPaper>
+                        </MudTabPanel>
+                    </MudTabs>
+                </MudStack>
+            </MudItem>
         </MudGrid>
     </MudContainer>
-    </text>;
-    }
-
-}
+</div>

@@ -12,6 +12,7 @@ namespace CVIServiceWebApp.Components
         [Inject] protected ISnackbar Snackbar { get; set; } = default!;
         [Parameter, AllowNull] public RenderFragment CorpoContainer { get; set; }
         [Parameter, AllowNull] public string Titulo { get; set; } = string.Empty;
+  
 
         public abstract RenderFragment RenderCorpoContainer();
 
