@@ -1,0 +1,27 @@
+﻿@inherits MudCard
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+<MudCard>
+    <MudCardHeader>
+        <CardHeaderContent>
+            <MudText Typo="Typo.h6"> @CVICardHeaderContent </MudText>
+        </CardHeaderContent>
+        <CardHeaderActions>
+            @CVICardHeaderActions
+            <MudIconButton Icon="@Icons.Material.Filled.Edit" Color = " Color .Default "/> 
+            <MudIconButton Icon="@Icons.Material.Filled.Delete" Disabled="@CVICardctionDelete" Color=" Color .Default " />
+        </CardHeaderActions>
+    </MudCardHeader>
+    <MudCardContent>
+        @CVICardContent
+        <MudCardActions>
+            @CVICardContentActions
+        </MudCardActions>
+    </MudCardContent>
+</MudCard>
+@code {
+
+}

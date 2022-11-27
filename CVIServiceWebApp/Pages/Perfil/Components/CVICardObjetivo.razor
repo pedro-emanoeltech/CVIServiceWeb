@@ -1,0 +1,24 @@
+﻿@inherits CVICard
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    public override RenderFragment RenderCardContent()
+    {
+        return
+    @<text>
+
+    </text>
+    ;
+    }
+    public override RenderFragment RenderCardHeaderActions()
+    {
+        return CVICardHeaderActions;
+    }
+    public override RenderFragment RenderCardContentActions()
+    {
+        return CVICardContentActions;
+    }
+}

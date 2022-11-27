@@ -16,7 +16,7 @@ namespace CVIServiceWebApp.Pages.Conta
         [Inject] private IContaServices _contaServices { get; set; } = default!;
         [Inject] private NavigationManager NavigationManager { get; set; } = default!;
         [Inject] IDialogService DialogService { get; set; } = default!;
-        [Inject] protected ISnackbar Snackbar { get; set; } = default!;
+        [Inject] private ISnackbar Snackbar { get; set; } = default!;
         public CancellationTokenSource _Source { get; set; } = new CancellationTokenSource();
         private CancellationToken Token { get; set; }
         public bool Carregando { get; set; } = false;

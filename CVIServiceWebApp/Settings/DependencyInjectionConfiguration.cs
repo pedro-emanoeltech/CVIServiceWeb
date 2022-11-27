@@ -15,6 +15,9 @@ namespace CVIServiceWeb.Settings
             services.AddScoped<IContaRepository, ContaRepository>();
             services.AddScoped<IContaServices, ContaServices>();
 
+            services.AddScoped<IPerfilRepository, PerfilRepository>();
+            services.AddScoped<IPerfilServices, PerfilServices>();
+
             services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<ILoginServices, LoginServices>();
 

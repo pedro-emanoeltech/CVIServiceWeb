@@ -15,7 +15,7 @@ namespace CVIServiceWebApp.Shared
         public string NomePerfil { get; set; } = "Pedro Emanoel";
         public string? Search { get; set; }
 
-        bool DrawerOpen = true;
+        bool DrawerOpen = false;
 
         void DrawerToggle()
         {
