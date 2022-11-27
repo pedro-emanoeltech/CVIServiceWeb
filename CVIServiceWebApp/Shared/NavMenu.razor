@@ -2,34 +2,43 @@
 
 
 <MudAppBar Color="Color.Dark" Elevation="25" Dense="true">
+    <MudGrid Justify="Justify.SpaceBetween">
+        <MudItem>
 
-    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-    <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
-              Height="35" Width="160" Elevation="25" Class="rounded-lg" />
-    <MudSpacer />
+            <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+            <MudImage Src="https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/logo-curriculo-inteligente-1.png"
+                      Height="35" Width="160" Elevation="25" Class="rounded-lg" />
 
-    <MudTextField Style="height:35px; width:500px;"
-                  MaxLength="500"
-                  @bind-Value="Search"
-                  Label="Busque oportunidade"
-                  Variant="Variant.Outlined"
-                  FullWidth="true"
-                  Margin="Margin.Dense"
-                  AdornmentIcon="@Icons.Filled.Search" />
+        </MudItem>
+        <MudSpacer />
+        <MudItem>
+            <MudPaper Style="height:35px; width:500px; margin-top:5px;">
+                <MudTextField Style="height:35px;"
+                              @bind-Value="Search"
+                              Label="Busque oportunidade"
+                              Variant="Variant.Outlined"
+                              FullWidth="true"
+                              Margin="Margin.Dense"
+                              AdornmentIcon="@Icons.Filled.Search"
+                              AdornmentColor="Color.Secondary"
+                              Adornment="Adornment.End"
+                              IconSize="Size.Medium" />
+                <MudSpacer />
+            </MudPaper>
+        </MudItem>
+        <MudSpacer />
+        <MudItem>
+            <MudMenu Color="Color.Primary">
+                <ActivatorContent>
+                    <MudIconButton Icon="@Icons.Outlined.Settings" Color="Color.Inherit" Edge="Edge.Start" />
+                </ActivatorContent>
+                <ChildContent>
+                    <MudMenuItem Icon="@Icons.Filled.PersonPin" Href="/conta">Editar Conta</MudMenuItem>
+                </ChildContent>
+            </MudMenu>
 
-    <MudSpacer />
-
-    <MudMenu Color="Color.Primary">
-        <ActivatorContent>
-            <MudIconButton Icon="@Icons.Outlined.Settings" Color="Color.Inherit" Edge="Edge.Start" />
-        </ActivatorContent>
-        <ChildContent>
-            <MudMenuItem Icon="@Icons.Filled.PersonPin" Href="/conta">Editar Conta</MudMenuItem>
-        </ChildContent>
-    </MudMenu>
-
-
-
+        </MudItem>
+    </MudGrid>
 </MudAppBar>
 
 <MudDrawer ClipMode="DrawerClipMode.Always"
