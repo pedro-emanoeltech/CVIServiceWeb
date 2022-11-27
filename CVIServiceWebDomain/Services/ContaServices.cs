@@ -7,7 +7,7 @@ namespace CVIServiceWebDomain.Services
 {
     public class ContaServices : BaseServices<ContaRequest, ContaResponse>,IContaServices
     {
-        public ContaServices(IContaRepository repository) : base(repository)
+        public ContaServices(IContaRepository repository, HttpClient httpClient) : base(repository, httpClient)
         {
            
         }

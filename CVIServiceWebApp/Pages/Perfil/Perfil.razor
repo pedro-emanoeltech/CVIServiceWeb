@@ -37,7 +37,7 @@
             </MudGrid>
         </MudPaper>
 
-        <MudPaper Elevation="1" Width="100%" Height="50">
+        <MudPaper Elevation="1" Class="pa-3 ma-2" Height="60">
             <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
                 <MudChip Icon="@Icons.Material.Filled.Person" Color="Color.Primary">Acessar Conta</MudChip>
                 <MudChip Icon="@Icons.Material.Filled.Extension" Color="Color.Dark">Modelos Curriculos</MudChip>
@@ -47,143 +47,65 @@
         </MudPaper>
 
         <MudPaper Elevation="1" Class="pa-3 ma-2">
-            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                <MudGrid Justify="Justify.FlexStart" Class="align-content-center" Spacing="2">
-                    <MudItem >
+            <MudGrid Justify="Justify.FlexEnd" Class="align-content-center" Spacing="2">
+                <MudItem xs="8">
+                    <MudExpansionPanels MultiExpansion="true" Elevation="0">
+                        <MudExpansionPanel Text="Dense" Dense="true">
+                            <MudPaper Elevation="2">
+                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                    <MudPaper Elevation="1">
+                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
+                                    </MudPaper>
+                                </MudStack>
+                            </MudPaper>
+                        </MudExpansionPanel>
+                        <MudExpansionPanel Text="Dense" Dense="true">
+                            <MudPaper Elevation="2">
+                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                    <MudPaper Elevation="1">
+                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
+                                    </MudPaper>
+                                </MudStack>
+                            </MudPaper>
+                        </MudExpansionPanel>
+                        <MudExpansionPanel Text="Dense" Dense="true">
+                            <MudPaper Elevation="2">
+                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                    <MudPaper Elevation="1">
+                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
+                                    </MudPaper>
+                                </MudStack>
+                            </MudPaper>
+                        </MudExpansionPanel>
+                    </MudExpansionPanels>
+                </MudItem>
+                <MudItem xs="3">
+                    <MudPaper Elevation="2" Height="100%">
                         <CVICardPerfil PerfilResponse="@Enitty" />
-                    </MudItem>
-
-                    <MudItem xs="8" >
-                        <MudGrid Justify="Justify.FlexStart" Class="align-content-center" Spacing="2">
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-                            <MudItem xs="8">
-                                <MudPaper Elevation="2" Height="250" Width="350">
-                                    <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                        <MudPaper Elevation="1">
-                                            <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                        </MudPaper>
-                                        <MudPaper Elevation="1">
-                                            <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                        </MudPaper>
-                                    </MudStack>
-                                </MudPaper>
-                            </MudItem>
-
-                        </MudGrid>
-                    </MudItem>
-                </MudGrid>
-
-            </MudStack>
-
+                    </MudPaper>
+                </MudItem>
+            </MudGrid>
         </MudPaper>
-    </text>;
+
+    </text>
+        ;
     }
 }

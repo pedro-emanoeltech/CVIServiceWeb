@@ -8,7 +8,7 @@ namespace CVIServiceWebDomain.Services
     public class LoginServices : BaseServices<AuthenticateRequest, AuthenticateResponse>,ILoginServices
     {
         private readonly ILoginRepository _repository;
-        public LoginServices(ILoginRepository repository) : base(repository)
+        public LoginServices(ILoginRepository repository, HttpClient httpClient) : base(repository, httpClient)
         {
             _repository = repository;
         }

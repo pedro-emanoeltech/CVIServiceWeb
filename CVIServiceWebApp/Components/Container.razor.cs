@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using MudBlazor;
 using System.Diagnostics.CodeAnalysis;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CVIServiceWebApp.Components
 {
@@ -16,10 +17,11 @@ namespace CVIServiceWebApp.Components
 
         public abstract RenderFragment RenderCorpoContainer();
 
+
         protected override void OnInitialized()
         {
-            CorpoContainer = RenderCorpoContainer();
             base.OnInitialized();
+            CorpoContainer = RenderCorpoContainer();
         }
     }
 }

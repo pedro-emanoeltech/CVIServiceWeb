@@ -2,6 +2,8 @@
 using CVIServiceLibShared.App.Response;
 using CVIServiceLibShared.Constants;
 using CVIServiceWebDomain.Interfaces.IRepository;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -20,11 +22,13 @@ namespace CVIServiceWebInfra.Repository
             HttpClient = httpClient;
             _resource = resource;
         }
-        public virtual async Task<TResponse?> Get(Guid id)
+        public virtual async Task<TResponse?> Get(string id)
         {
             try
             {
-                var result = await HttpClient.GetAsync(_resource + "/" + id.ToString());
+               
+                var uri = Endpoint.BASEURI + _resource + "/" + id;
+                var result = await HttpClient.GetAsync(uri);
 
                 if (result.IsSuccessStatusCode)
                 {
@@ -46,7 +50,8 @@ namespace CVIServiceWebInfra.Repository
         {
             try
             {
-                var uri = $"{Endpoint.BASEURI + _resource}";
+                
+                var uri = $"{Endpoint.BASEURI}{_resource}";
                 var result = await HttpClient.GetAsync(uri);
 
                 if (result.IsSuccessStatusCode)
@@ -93,12 +98,12 @@ namespace CVIServiceWebInfra.Repository
                 throw new Exception(e.Message);
             }
         }
-        public virtual async Task<TResponse?> Edit(TRequest t, Guid id)
+        public virtual async Task<TResponse?> Edit(TRequest t, string id)
         {
             try
             {
                 var entitySerializer = JsonSerializer.Serialize(t);
-                var result = await HttpClient.PutAsync(Endpoint.BASEURI + _resource + "/" + id.ToString()
+                var result = await HttpClient.PutAsync(Endpoint.BASEURI + _resource + "/" + id
                     , new StringContent(entitySerializer));
 
                 if (result.IsSuccessStatusCode)
@@ -118,11 +123,11 @@ namespace CVIServiceWebInfra.Repository
                 throw new Exception( e.Message);
             }
         }
-        public virtual async Task<bool> Delete(Guid id)
+        public virtual async Task<bool> Delete(string id)
         {
             try
             {
-                var response = await HttpClient.DeleteAsync(Endpoint.BASEURI + _resource + "/" + id.ToString());
+                var response = await HttpClient.DeleteAsync(Endpoint.BASEURI + _resource + "/" + id);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception e)

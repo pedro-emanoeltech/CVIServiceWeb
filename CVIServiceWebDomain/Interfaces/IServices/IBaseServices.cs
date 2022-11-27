@@ -10,14 +10,14 @@ namespace CVIServiceWebDomain.Interfaces.IServices
 {
     public interface IBaseServices<TRequest, TResponse> where TRequest : BaseRequest where TResponse : BaseResponse
     {
-        Task<TResponse?> Get(Guid id);
+        Task<TResponse?> Get(string id);
 
         Task<IList<TResponse>> GetList();
 
         Task<TResponse?> Add(TRequest T);
 
-        Task<TResponse?> Edit(TRequest T, Guid id);
+        Task<TResponse?> Edit(TRequest T, string id);
 
-        Task<bool> Delete(Guid id);
+        Task<bool> Delete(string id);
     }
 }

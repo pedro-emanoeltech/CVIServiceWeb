@@ -12,12 +12,16 @@ namespace CVIServiceWebApp.ServicesApp
     {
         private readonly ISessionStorageService _sessaoStorage;
         private ClaimsPrincipal _anonymous = new ClaimsPrincipal(new ClaimsIdentity());
+        private readonly HttpClient _httpClient;
 
-        public CustomAuthenticationState(ISessionStorageService sessaoStorage)
+        public CustomAuthenticationState(ISessionStorageService sessaoStorage, HttpClient httpClient)
         {
+            
             _sessaoStorage = sessaoStorage;
+            _httpClient = httpClient;
         }
 
+      
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
             try
@@ -32,7 +36,10 @@ namespace CVIServiceWebApp.ServicesApp
                     new Claim(ClaimTypes.NameIdentifier,usuario.ContaId.ToString()!),
                     new Claim(ClaimTypes.Role,usuario.Role.ToString()!)
 
-                }, "JwtAuth")); ;
+                }, "JwtAuth")); 
+
+               
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer"," "+usuario.Token.ToString());
                 return await Task.FromResult(new AuthenticationState(claimsPrincipal));
             }
             catch

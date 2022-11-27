@@ -2,7 +2,7 @@
 
 namespace CVIServiceWebApp.Components
 {
-    public partial class Base : ComponentBase
+    public abstract partial class Base : ComponentBase
     {
         
     }

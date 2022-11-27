@@ -7,10 +7,11 @@ namespace CVIServiceWebDomain.Services
 {
     public class PerfilServices : BaseServices<PerfilRequest, PerfilResponse>, IPerfilServices
     {
-        public PerfilServices(IPerfilRepository repository) : base(repository)
+        public PerfilServices(IPerfilRepository repository, HttpClient httpClient) : base(repository, httpClient)
         {
            
         }
+
      
     }
 }
