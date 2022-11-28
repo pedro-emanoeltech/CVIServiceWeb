@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Components;
 
 namespace CVIServiceWebApp.Pages.Perfil.Components
 {
-    public partial class CVICardObjetivo : CVICard
+    public partial class CVICardExperiencia : CVICard
     {
-        public CVICardObjetivo()
+        [Parameter] public HistoricoProfissionalResponse HistoricoProfissional  { get; set; }
+        public CVICardExperiencia()
         {
-            CVICardctionDelete = true;
+            
         }
-        [Parameter] public ObjetivoResponse ObjetivoResponse { get; set; }
+       
 
         protected override void OnInitialized()
         {

@@ -1,0 +1,61 @@
+﻿@inherits CVICard
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    public override RenderFragment RenderCardContent()
+    {
+        return
+    @<text>
+
+       
+        <MudText Typo="Typo.h6" Class="px-4">Porte</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Porte.ToString()</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Segmento Empresa</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Segmento!.Setor</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Cidade Empresa</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Cidade!.Nome</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Contato Empresa</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Contato!.Texto</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Cargo</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Cargo!.NomeCargo</MudText>
+        <MudDivider Class="my-2" />
+         <MudText Typo="Typo.h6" Class="px-4">Data de incio</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Cargo!.Inicio</MudText>
+        <MudDivider Class="my-2" />
+            <MudText Typo="Typo.h6" Class="px-4">Data de Termino</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Cargo!.Termino</MudText>
+        <MudDivider Class="my-2" />
+         <MudText Typo="Typo.h6" Class="px-4">Descrição cargo exercido</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.Cargo!.DescricaoCargo</MudText>
+        <MudDivider Class="my-2" />
+
+            </text>
+    ;
+    }
+    public override RenderFragment RenderCardHeaderActions()
+    {
+        return CVICardHeaderActions;
+    }
+    public override RenderFragment RenderCardContentActions()
+    {
+        return CVICardContentActions;
+    }
+    public override RenderFragment RenderHeaderContent()
+    {
+        return
+        @<text>
+        <MudText Typo="Typo.h6" Class="px-4">Empresa:</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@HistoricoProfissional.NomeEmpresa   </MudText>
+        <MudDivider Class="my-2" />
+
+        </text>;
+    }
+    
+}

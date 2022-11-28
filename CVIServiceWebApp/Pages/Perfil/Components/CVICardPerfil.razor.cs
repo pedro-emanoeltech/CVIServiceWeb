@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Components;
 
 namespace CVIServiceWebApp.Pages.Perfil.Components
 {
-    public partial class CVICardPerfil : CVICard
+    public partial class CVICardPerfil : CVICardResumo
     {
         public CVICardPerfil()
         {
             CVICardHeaderContent = "Resumo";
+            CVICardctionDelete = true;
 
         }
         [Parameter] public PerfilResponse PerfilResponse { get; set; }

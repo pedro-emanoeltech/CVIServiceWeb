@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Components;
 
 namespace CVIServiceWebApp.Pages.Perfil.Components
 {
-    public partial class CVICardObjetivo : CVICard
+    public partial class CVICardIdioma : CVICard
     {
-        public CVICardObjetivo()
+        [Parameter] public IdiomaResponse IdiomaResponse { get; set; }
+        public CVICardIdioma()
         {
-            CVICardctionDelete = true;
+            
         }
-        [Parameter] public ObjetivoResponse ObjetivoResponse { get; set; }
+       
 
         protected override void OnInitialized()
         {

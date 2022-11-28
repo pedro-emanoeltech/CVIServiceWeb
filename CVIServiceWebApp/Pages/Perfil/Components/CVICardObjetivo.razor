@@ -10,6 +10,16 @@
         return
     @<text>
 
+        <MudText Typo="Typo.h6" Class="px-4">Interesse</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@ObjetivoResponse.AreaInteresse</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Pretensão Salarial</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@ObjetivoResponse.PretensaoSalarial</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Resumo profissional</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@ObjetivoResponse.ResumoProfissional</MudText>
+        <MudDivider Class="my-2" />
+
     </text>
     ;
     }
@@ -20,5 +30,9 @@
     public override RenderFragment RenderCardContentActions()
     {
         return CVICardContentActions;
+    }
+    public override RenderFragment RenderHeaderContent()
+    {
+        return CVICardHeaderContents;
     }
 }

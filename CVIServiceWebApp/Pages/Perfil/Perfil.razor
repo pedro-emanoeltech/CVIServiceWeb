@@ -17,27 +17,54 @@
     {
         return
     @<text>
-        <MudPaper Elevation="1" Class="pa-3 ma-2">
+        <MudOverlay LightBackground="true"
+                DarkBackground="false"
+                Absolute="true"
+                ZIndex="9999" Visible="@Loading">
+            <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+        </MudOverlay>
+        <MudPaper Elevation="0" Class="pa-3 ma-2">
             <MudGrid Justify="Justify.Center" Class="align-content-center">
-                <MudItem>
-                    <MudPaper Elevation="2" Height="250" Width="350">
-                        <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                            <MudPaper Elevation="1">
-                                <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                            </MudPaper>
-                            <MudPaper Elevation="1">
-                                <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                            </MudPaper>
-                            <MudPaper Elevation="1">
-                                <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                            </MudPaper>
-                        </MudStack>
-                    </MudPaper>
-                </MudItem>
+                @if (Loading)
+                {
+                    <MudItem>
+                        <MudPaper Elevation="0" Height="250" Width="350">
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                <MudPaper Elevation="0">
+                                    <MudSkeleton SkeletonType="SkeletonType.Circle" Width="150px" Height="150px" />>
+                                </MudPaper>
+                                <MudPaper Elevation="0">
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                </MudPaper>
+                                <MudPaper Elevation="0">
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                </MudPaper>
+                            </MudStack>
+                        </MudPaper>
+                    </MudItem>
+                }
+                else
+                {
+                    <MudItem>
+                        <MudPaper Elevation="0" Height="250" Width="350">
+                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                <MudPaper Elevation="0">
+                                    <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
+                                </MudPaper>
+                                <MudPaper Elevation="0">
+                                    <MudText Typo="Typo.h4" Class="px-4 "><b>@Enitty.Nome</b></MudText>
+                                </MudPaper>
+                                <MudPaper Elevation="0">
+                                    <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@Enitty.Bio</MudText>
+                                </MudPaper>
+                            </MudStack>
+                        </MudPaper>
+                    </MudItem>
+                }
             </MudGrid>
         </MudPaper>
 
-        <MudPaper Elevation="1" Class="pa-3 ma-2" Height="60">
+        <MudPaper Elevation="0" Class="pa-3 ma-2" Height="60">
             <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
                 <MudChip Icon="@Icons.Material.Filled.Person" Color="Color.Primary">Acessar Conta</MudChip>
                 <MudChip Icon="@Icons.Material.Filled.Extension" Color="Color.Dark">Modelos Curriculos</MudChip>
@@ -45,63 +72,133 @@
                 <MudChip Icon="@Icons.Material.Filled.FlightTakeoff" Color="Color.Secondary">Candidaturas</MudChip>
             </MudStack>
         </MudPaper>
-
-        <MudPaper Elevation="1" Class="pa-3 ma-2">
+        <MudPaper Elevation="0" Class="pa-3 ma-2">
             <MudGrid Justify="Justify.FlexEnd" Class="align-content-center" Spacing="2">
-                <MudItem xs="8">
-                    <MudExpansionPanels MultiExpansion="true" Elevation="0">
-                        <MudExpansionPanel Text="Dense" Dense="true">
-                            <MudPaper Elevation="2">
-                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                    <MudPaper Elevation="1">
-                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                    </MudPaper>
-                                </MudStack>
+                @if (!Loading)
+                {
+                    <MudItem xs="8">
+                        <MudExpansionPanels MultiExpansion="true" Elevation="0">
+                            <MudPaper Elevation="3" Class="pa-3 ma-2">
+                                <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
+                                    <TitleContent>
+                                        <MudStack Justify="Justify.SpaceBetween" Row="true">
+                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Objetivo</MudText>
+                                            <MudIconButton DisableElevation="true" Disabled="true" Icon="@Icons.Material.Filled.Add" />
+                                        </MudStack>
+                                        <MudDivider Class="my-2" />
+                                    </TitleContent>
+                                    <ChildContent>
+                                        @if (@Enitty.Objetivo is not null)
+                                        {
+                                            <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                                <MudPaper Elevation="0" Width="100%">
+                                                    <CVICardObjetivo ObjetivoResponse="@Enitty.Objetivo" />
+                                                </MudPaper>
+                                            </MudStack>
+                                        }
+                                    </ChildContent>
+
+                                </MudExpansionPanel>
                             </MudPaper>
-                        </MudExpansionPanel>
-                        <MudExpansionPanel Text="Dense" Dense="true">
-                            <MudPaper Elevation="2">
-                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                    <MudPaper Elevation="1">
-                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                    </MudPaper>
-                                </MudStack>
+                            <MudPaper Elevation="3" Class="pa-3 ma-2">
+                                <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
+                                    <TitleContent>
+                                        <MudStack Justify="Justify.SpaceBetween" Row="true">
+                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Experiência</MudText>
+                                            <MudIconButton DisableElevation="true" Icon="@Icons.Material.Filled.Add" />
+                                        </MudStack>
+                                        <MudDivider Class="my-2" />
+                                    </TitleContent>
+                                    <ChildContent>
+                                        <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                            @if (@Enitty.HistoricoProfissional!.Count() > 0)
+                                            {
+                                                @foreach (var item in @Enitty.HistoricoProfissional!)
+                                                {
+                                                    <MudPaper Elevation="0" Width="100%">
+                                                        <CVICardExperiencia HistoricoProfissional="@item" />
+                                                    </MudPaper>
+                                                }
+                                            }
+                                        </MudStack>
+                                    </ChildContent>
+                                </MudExpansionPanel>
                             </MudPaper>
-                        </MudExpansionPanel>
-                        <MudExpansionPanel Text="Dense" Dense="true">
-                            <MudPaper Elevation="2">
-                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                    <MudPaper Elevation="1">
-                                        <MudAvatar Style="height:150px; width:150px; font-size:2rem;" Image="@ImagePerfil" />
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h4" Class="px-4 mud-text-secondary"><b>@NomePerfil</b></MudText>
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudText Typo="Typo.h6" Class="px-4 mud-text-secondary">@NomePerfil</MudText>
-                                    </MudPaper>
-                                </MudStack>
+                            <MudPaper Elevation="3" Class="pa-3 ma-2">
+                                <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
+                                    <TitleContent>
+                                        <MudStack Justify="Justify.SpaceBetween" Row="true">
+                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Formação</MudText>
+                                            <MudIconButton DisableElevation="true"  Icon="@Icons.Material.Filled.Add" />
+                                        </MudStack>
+                                        <MudDivider Class="my-2" />
+                                    </TitleContent>
+                                    <ChildContent>
+                                        <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                            @if (@Enitty.CursoFormacaoAcademica!.Count() > 0)
+                                            {
+                                                @foreach (var item in @Enitty.CursoFormacaoAcademica!)
+                                                {
+                                                    <MudPaper Elevation="0" Width="100%">
+                                                        <CVICardFormacao CursoFormacaoAcademica="@item" />
+                                                    </MudPaper>
+                                                }
+                                            }
+                                        </MudStack>
+                                    </ChildContent>
+                                </MudExpansionPanel>
                             </MudPaper>
-                        </MudExpansionPanel>
-                    </MudExpansionPanels>
-                </MudItem>
-                <MudItem xs="3">
-                    <MudPaper Elevation="2" Height="100%">
-                        <CVICardPerfil PerfilResponse="@Enitty" />
-                    </MudPaper>
-                </MudItem>
+                            <MudPaper Elevation="3" Class="pa-3 ma-2">
+                                <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
+                                    <TitleContent>
+                                        <MudStack Justify="Justify.SpaceBetween" Row="true">
+                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Idiomas</MudText>
+                                            <MudIconButton DisableElevation="true" Icon="@Icons.Material.Filled.Add" />
+                                        </MudStack>
+                                        <MudDivider Class="my-2" />
+                                    </TitleContent>
+                                    <ChildContent>
+                                        <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                            <MudPaper Elevation="0" Width="100%">
+                                                <CVICardIdioma IdiomaResponse="@Enitty.Idioma" />
+                                            </MudPaper>
+                                        </MudStack>
+                                    </ChildContent>
+                                </MudExpansionPanel>
+                            </MudPaper>
+                        </MudExpansionPanels>
+                    </MudItem>
+                    <MudItem xs="3">
+                        <MudPaper Elevation="0" Height="100%">
+                            <CVICardPerfil PerfilResponse="@Enitty" />
+                        </MudPaper>
+                    </MudItem>
+
+                }
+                else
+                {
+                    <MudItem xs="8">
+                        <MudExpansionPanels MultiExpansion="true" Elevation="0">
+                            <MudExpansionPanel Text="Dense" Dense="true">
+                                <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                </MudStack>
+                            </MudExpansionPanel>
+                        </MudExpansionPanels>
+                    </MudItem>
+                    <MudItem xs="3">
+                        <MudSkeleton Animation="Animation.Wave" />
+                        <MudSkeleton Animation="Animation.Wave" />
+                        <MudSkeleton Animation="Animation.Wave" />
+                    </MudItem>
+
+                }
+
             </MudGrid>
         </MudPaper>
 

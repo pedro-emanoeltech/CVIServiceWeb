@@ -1,0 +1,54 @@
+﻿@inherits CVICard
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    public override RenderFragment RenderCardContent()
+    {
+        return
+    @<text>
+
+
+        <MudText Typo="Typo.h6" Class="px-4">Instituicão</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.Instituicao </MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Situação</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica!.SituacaoCurso.ToString()</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Cidade</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.Cidade!.Nome</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Data Incio</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.Inicio</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Data termino</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.Termino</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">Descrição do Curso</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.DescricaoCurso!</MudText>
+        <MudDivider Class="my-2" />
+
+    </text>
+        ;
+    }
+    public override RenderFragment RenderCardHeaderActions()
+    {
+        return CVICardHeaderActions;
+    }
+    public override RenderFragment RenderCardContentActions()
+    {
+        return CVICardContentActions;
+    }
+    public override RenderFragment RenderHeaderContent()
+    {
+        return
+    @<text>
+        <MudText Typo="Typo.h6" Class="px-4">Curso:</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@CursoFormacaoAcademica.Curso!.NomeCurso!.ToString()</MudText>
+        <MudDivider Class="my-2" />
+
+    </text>;
+    }
+
+}

@@ -1,38 +1,136 @@
 ﻿@page "/"
-@inherits Container
+
+
+
+@inherits Container;
+
 
 @{
     base.BuildRenderTree(__builder);
 }
 
 
-    @code {
+@code {
     public override RenderFragment RenderCorpoContainer()
     {
         return
     @<text>
-        <MudText Typo="Typo.h6" Class="ml-3">Vagas</MudText>
-        <MudContainer Class="mt-16 px-8" MaxWidth="MaxWidth.False">
-        <MudGrid>
-            <MudItem xs="12" sm="6" md="12">
-                <MudPaper Elevation="2" Class="pa-4" Style="height: 100%" Height="600px">
-                    <MudTabs Outlined="true" Position="Position.Left" Rounded="true" Border="true"
-                             ApplyEffectsToContainer="true" Class="mt-8" PanelClass="pa-6">
-                        <MudTabPanel Text="Informações pessoais">
-                            <MudText></MudText>
-                        </MudTabPanel>
-                        <MudTabPanel Text="Alterar Senha">
-                        
-                        </MudTabPanel>
-                        <MudTabPanel Text="Excluir Conta">
-                            <MudText>Content Three</MudText>
-                        </MudTabPanel>
-                    </MudTabs>
+        <MudPaper Elevation="6" Class="pa-3 ma-2">
+            <MudOverlay LightBackground="true"
+                    DarkBackground="false"
+                    Absolute="true"
+                    ZIndex="9999" Visible="@Loading">
+                <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+            </MudOverlay>
+            <MudPaper Elevation="1" Class="pa-3 ma-2">
+                <MudGrid Justify="Justify.Center" Class="align-content-center">
+                    @if (Loading)
+                    {
+                        <MudItem>
+                            <MudPaper Elevation="1" Height="100" Width="350">
+                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
+                                    <MudPaper Elevation="1">
+                                        <MudSkeleton Animation="Animation.Wave" />
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudSkeleton Animation="Animation.Wave" />
+                                    </MudPaper>
+                                </MudStack>
+                            </MudPaper>
+                        </MudItem>
+                    }
+                    else
+                    {
+                        <MudItem>
+                            <MudPaper Elevation="1" Height="100" Width="350">
+                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
+                                    <MudPaper Elevation="1">
+                                        <MudTextField @bind-Value="TextValue" Label="Standard" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                        <MudTextField @bind-Value="TextValue" Label="Standard" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
+                                    </MudPaper>
+                                    <MudPaper Elevation="1">
+                                       <MudDatePicker Label="Basic example" @bind-Date="date" />
+                                    </MudPaper>
+                                  
+                                </MudStack>
+                            </MudPaper>
+                        </MudItem>
+                    }
+                </MudGrid>
             </MudPaper>
-        </MudItem>
-    </MudGrid>
-    </MudContainer>
-    </text>;
-    }
 
+            <MudPaper Elevation="1" Class="pa-3 ma-2" Height="60">
+                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
+                    <MudChip Icon="@Icons.Material.Filled.Person" Color="Color.Primary">Acessar Conta</MudChip>
+                    <MudChip Icon="@Icons.Material.Filled.Extension" Color="Color.Dark">Modelos Curriculos</MudChip>
+                    <MudChip Icon="@Icons.Material.Filled.VerifiedUser" Color="Color.Info">Gerar Banner Perfil</MudChip>
+                    <MudChip Icon="@Icons.Material.Filled.FlightTakeoff" Color="Color.Secondary">Candidaturas</MudChip>
+                </MudStack>
+            </MudPaper>
+        </MudPaper>
+        <MudPaper Elevation="1" Class="pa-3 ma-2">
+            <MudGrid Justify="Justify.FlexEnd" Class="align-content-center" Spacing="2">
+                @if (!Loading)
+                {
+                    <MudItem xs="8">
+                        <MudExpansionPanels MultiExpansion="true" Elevation="1">
+                            <MudPaper Elevation="3" Class="pa-3 ma-2">
+                                <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
+                                    <TitleContent>
+                                        <MudStack Justify="Justify.SpaceBetween" Row="true">
+                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Objetivo</MudText>
+                                            <MudIconButton DisableElevation="true" Disabled="true" Icon="@Icons.Material.Filled.Add" />
+                                        </MudStack>
+                                        <MudDivider Class="my-2" />
+                                    </TitleContent>
+                                    <ChildContent>
+                                        @if (@Enitty.Objetivo is not null)
+                                        {
+                                            <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                                <MudPaper Elevation="1" Width="100%">
+                                                    <CVICardObjetivo ObjetivoResponse="@Enitty.Objetivo" />
+                                                </MudPaper>
+                                            </MudStack>
+                                        }
+                                    </ChildContent>
+
+                                </MudExpansionPanel>
+                            </MudPaper>
+                        </MudExpansionPanels>
+                    </MudItem>
+                   
+
+                }
+                else
+                {
+                    <MudItem xs="8">
+                        <MudExpansionPanels MultiExpansion="true" Elevation="0">
+                            <MudExpansionPanel Text="Dense" Dense="true">
+                                <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                </MudStack>
+                            </MudExpansionPanel>
+                        </MudExpansionPanels>
+                    </MudItem>
+                    <MudItem xs="3">
+                        <MudSkeleton Animation="Animation.Wave" />
+                        <MudSkeleton Animation="Animation.Wave" />
+                        <MudSkeleton Animation="Animation.Wave" />
+                    </MudItem>
+
+                }
+
+            </MudGrid>
+        </MudPaper>
+
+    </text>
+        ;
+    }
 }

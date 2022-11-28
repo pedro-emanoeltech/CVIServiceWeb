@@ -2,15 +2,16 @@
 using CVIServiceWebApp.Components;
 using Microsoft.AspNetCore.Components;
 
-namespace CVIServiceWebApp.Pages.Perfil.Components
+namespace CVIServiceWebApp.Pages.Vagas.Components
 {
-    public partial class CVICardObjetivo : CVICard
+    public partial class CVICardVagas  : CVICard
     {
-        public CVICardObjetivo()
+        [Parameter] public VagaResponse VagaResponse { get; set; }
+        public CVICardVagas()
         {
-            CVICardctionDelete = true;
+            
         }
-        [Parameter] public ObjetivoResponse ObjetivoResponse { get; set; }
+       
 
         protected override void OnInitialized()
         {

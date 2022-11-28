@@ -1,0 +1,44 @@
+﻿@inherits CVICard
+
+@{
+    base.BuildRenderTree(__builder);
+}
+
+@code {
+    public override RenderFragment RenderCardContent()
+    {
+        return
+    @<text>
+
+
+        <MudText Typo="Typo.h6" Class="px-4">Lingua</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@IdiomaResponse.Nome</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">conversação</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@IdiomaResponse!.NivelConversacao.ToString()</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Escrita</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@IdiomaResponse.NivelEscrita!.ToString()</MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Leitura</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@IdiomaResponse.NivelLeitura!.ToString()</MudText>
+
+
+        </text>
+    ;
+    }
+    public override RenderFragment RenderCardHeaderActions()
+    {
+        return CVICardHeaderActions;
+    }
+    public override RenderFragment RenderCardContentActions()
+    {
+        return CVICardContentActions;
+    }
+    public override RenderFragment RenderHeaderContent()
+    {
+        return CVICardHeaderContents;
+
+    }
+
+}

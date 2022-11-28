@@ -1,5 +1,5 @@
 ﻿@using CVIServiceLibShared.Constants.Enums;
-@inherits CVICard
+@inherits CVICardResumo
 
 @{
     base.BuildRenderTree(__builder);
@@ -14,16 +14,23 @@
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Nome</MudText>
         <MudDivider Class="my-2" />
         <MudText Typo="Typo.h6" Class="px-4">E-mail</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Contato!.Select(p=>p.TipoContato == TipoContato.Email).ToString()</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">
+            @PerfilResponse.Contato.FirstOrDefault(p=>p.TipoContato.ToString() == TipoContato.Email.ToString())!.Texto
+       
+         </MudText>
+
         <MudDivider Class="my-2" />
         <MudText Typo="Typo.h6" Class="px-4">Endereço</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@EnderecoCompleto</MudText>
         <MudDivider Class="my-2" />
         <MudText Typo="Typo.h6" Class="px-4">Telefone</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Contato!.Select(p=>p.TipoContato == TipoContato.Celular).ToString()</MudText>
-        <MudDivider Class="my-2" />
-        <MudText Typo="Typo.h6" Class="px-4">Data de Nascimento</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Idade.ToString()</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">
+          @PerfilResponse.Contato.FirstOrDefault(p => p.TipoContato.ToString() == TipoContato.Telefone.ToString())!.Texto
+                 
+                </MudText>
+                    <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Idade</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Idade.ToString() Anos</MudText>
         <MudDivider Class="my-2"/>
         <MudText Typo="Typo.h6" Class="px-4">Nacionalidade</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Nacionalidade!.NomePais</MudText>
@@ -31,7 +38,9 @@
         <MudText Typo="Typo.h6" Class="px-4">Estado Civil</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.EstadoCivil.ToString()</MudText>
         <MudDivider Class="my-2" />
-        
+        <MudText Typo="Typo.h6" Class="px-4">Escolaridade</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@PerfilResponse.Escolaridade!.NivelAcademico.ToString()</MudText>
+        <MudDivider Class="my-2" />
         </text>
     ;
     }
@@ -43,4 +52,5 @@
     {
         return CVICardContentActions;
     }
+
 }

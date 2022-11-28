@@ -39,7 +39,7 @@ namespace CVIServiceWebApp.ServicesApp
                 }, "JwtAuth")); 
 
                
-                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer"," "+usuario.Token.ToString());
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer"," "+usuario.Token!.ToString());
                 return await Task.FromResult(new AuthenticationState(claimsPrincipal));
             }
             catch
