@@ -9,12 +9,13 @@ namespace CVIServiceWebApp.Pages.Vagas.Components
         [Parameter] public VagaResponse VagaResponse { get; set; }
         public CVICardVagas()
         {
-            
+            AtivoBotaoPadrao = false;
         }
        
 
         protected override void OnInitialized()
         {
+            CVICardHeaderAvatar = RenderCardHeaderAvatar();
             CVICardContent = RenderCardContent();
             CVICardHeaderActions = RenderCardHeaderActions();
             CVICardContentActions = RenderCardContentActions();

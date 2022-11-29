@@ -7,14 +7,21 @@
 <MudPaper Width="100%" Elevation="0">
     <MudCard>
         <MudCardHeader>
+             <CardHeaderAvatar>
+                @CVICardHeaderAvatar
+             </CardHeaderAvatar>
             <CardHeaderContent>
                 <MudText Typo="Typo.h6"> @CVICardTitulo </MudText>
                 @CVICardHeaderContents
             </CardHeaderContent>
             <CardHeaderActions>
                 @CVICardHeaderActions
-                <MudIconButton Icon="@Icons.Material.Filled.Edit" Color=" Color .Default " />
-                <MudIconButton Icon="@Icons.Material.Filled.Delete" Disabled="@CVICardctionDelete" Color=" Color .Default " />
+                @if (@AtivoBotaoPadrao)
+                {
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit" Color=" Color .Default " />
+                    <MudIconButton Icon="@Icons.Material.Filled.Delete" Disabled="@CVICardctionDelete" Color=" Color .Default " />
+                }
+
             </CardHeaderActions>
         </MudCardHeader>
         <MudCardContent>

@@ -37,6 +37,8 @@
     {
         return
     @<text>
+        <MudRating SelectedValue="2" />
+        <MudSpacer/>
         <MudIconButton Icon="@Icons.Material.Filled.Details" Variant="Variant.Text" Color=" Color .Default " />
     </text>;
     }
@@ -44,10 +46,17 @@
     {
         return
     @<text>
+        <MudText Typo="Typo.body1">@VagaResponse.Perfil!.Nome</MudText>
+        <MudText Typo="Typo.body2">@VagaResponse.Perfil!.Bio</MudText>
 
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Titulo</MudText>
-        <MudDivider Class="my-2" />
+    </text>;
+    }
+    public override RenderFragment RenderCardHeaderAvatar()
+    {
+        return
+    @<text>
 
+        <MudAvatar Color="Color.Secondary">@VagaResponse.Perfil!.Nome[0].ToString()</MudAvatar>
     </text>;
     }
 

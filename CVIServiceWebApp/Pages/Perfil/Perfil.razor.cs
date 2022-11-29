@@ -11,7 +11,6 @@ namespace CVIServiceWebApp.Pages.Perfil
     public partial class Perfil : Container
     {
         private static HttpClient _httpClient = new HttpClient();
-        public IList<PerfilResponse>? Perfis { get; set; } = new List<PerfilResponse>();
         public PerfilResponse Enitty { get; set; } = new PerfilResponse();
         [Inject] private IPerfilServices _perfilServices { get; set; } = default!;
         public string ImagePerfil { get; set; } = "https://www.canalpedroemanuel.com/wp-content/uploads/2022/11/pedro-foto.jpg";

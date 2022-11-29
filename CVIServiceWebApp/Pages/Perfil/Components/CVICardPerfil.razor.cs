@@ -20,6 +20,7 @@ namespace CVIServiceWebApp.Pages.Perfil.Components
         protected override void OnInitialized()
         {
             GetEnderecoCompleto();
+           
             CVICardContent = RenderCardContent();
             CVICardHeaderActions = RenderCardHeaderActions();
             CVICardContentActions = RenderCardContentActions();

@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using CVIServiceLibShared.Constants.Enums;
 
 
 
@@ -15,13 +16,19 @@
     {
         return
     @<text>
-        <MudPaper Elevation="6" Class="pa-3 ma-2">
+        <MudPaper Elevation="0" Class="pa-3 ma-2">
             <MudOverlay LightBackground="true"
                     DarkBackground="false"
                     Absolute="true"
                     ZIndex="9999" Visible="@Loading">
                 <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
             </MudOverlay>
+            <MudStack Row="true" AlignItems="AlignItems.Center" Justify="Justify.Center">
+                <MudPaper Elevation="0">
+                    <MudText Typo="Typo.h3">Consulta de Vagas</MudText>
+                </MudPaper>
+            </MudStack>
+
             <MudPaper Elevation="1" Class="pa-3 ma-2">
                 <MudGrid Justify="Justify.Center" Class="align-content-center">
                     @if (Loading)
@@ -29,10 +36,10 @@
                         <MudItem>
                             <MudPaper Elevation="1" Height="100" Width="350">
                                 <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="false">
-                                    <MudPaper Elevation="1">
+                                    <MudPaper Elevation="0">
                                         <MudSkeleton Animation="Animation.Wave" />
                                     </MudPaper>
-                                    <MudPaper Elevation="1">
+                                    <MudPaper Elevation="0">
                                         <MudSkeleton Animation="Animation.Wave" />
                                     </MudPaper>
                                 </MudStack>
@@ -41,37 +48,59 @@
                     }
                     else
                     {
-                        <MudItem>
-                            <MudPaper Elevation="1" Height="100" Width="350">
-                                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
-                                    <MudPaper Elevation="1">
-                                        <MudTextField @bind-Value="TextValue" Label="Standard" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                        <MudTextField @bind-Value="TextValue" Label="Standard" Variant="Variant.Text" Margin="Margin.Dense"></MudTextField>
-                                    </MudPaper>
-                                    <MudPaper Elevation="1">
-                                       <MudDatePicker Label="Basic example" @bind-Date="date" />
-                                    </MudPaper>
-                                  
-                                </MudStack>
-                            </MudPaper>
-                        </MudItem>
+                        <MudItem xs="12">
+                            <MudPaper Class="pa-3 ma-2" Elevation="25">
+                                <MudStack Row="true">
+                                    <MudGrid Justify="Justify.Center">
+                                        <MudItem xs="3">
+                                            <MudPaper Elevation="0">
+                                                <MudSelect Label="Modalidade de Trabalho"
+                                                   Margin="Margin.Dense"
+                                                   Dense="true"
+                                                   Variant="Variant.Outlined" @bind-Value="_modalidadeTrabalho" Text="@(_modalidadeTrabalho.ToString())">
+                                                    @foreach (ModalidadeTrabalho item in Enum.GetValues(typeof(ModalidadeTrabalho)))
+                                                {
+                                                    <MudSelectItem Value="@item">@item.ToString()</MudSelectItem>
+                                                }
+                                            </MudSelect>
+                                        </MudPaper>
+                                    </MudItem>
+                                    <MudItem xs="4">
+                                        <MudPaper Elevation="0">
+                                            <MudTextField @bind-Value="filtro" Label="Cargo,Cidade ou estado" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                                        </MudPaper>
+                                    </MudItem>
+                                    <MudItem xs="3">
+                                        <MudPaper Elevation="0">
+                                            <MudDatePicker Margin="Margin.Dense" Variant="Variant.Outlined" Label="Data de publicação" @bind-Date="date" />
+                                        </MudPaper>
+                                    </MudItem>
+                                    <MudItem xs="2">
+                                        <MudPaper Elevation="0">
+                                            <MudChip Size="Size.Large" Icon="@Icons.Filled.Search" OnClick="@BuscarVaga" Color="Color.Tertiary">Buscar</MudChip>
+                                        </MudPaper>
+                                       
+                                    </MudItem>
+                                    <MudItem xs="4">
+                                        <MudPaper Elevation="0">
+                                            <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
+                                                <MudChip Icon="@Icons.Filled.Accessible" Color="Color.Primary">Vagas para PCD</MudChip>
+                                                <MudChip Icon="@Icons.Filled.WbIncandescent" Color="Color.Dark">Estágio e Trainee</MudChip>
+                                                <MudChip Icon="@Icons.Filled.DisplaySettings" Color="Color.Info">Desenvolvedor</MudChip>
+                                            </MudStack>
+                                        </MudPaper>
+                                    </MudItem>
+
+                                </MudGrid>
+                            </MudStack>
+                        </MudPaper>
+                    </MudItem>
                     }
                 </MudGrid>
             </MudPaper>
-
-            <MudPaper Elevation="1" Class="pa-3 ma-2" Height="60">
-                <MudStack AlignItems="AlignItems.Center" Justify="Justify.Center" Row="true">
-                    <MudChip Icon="@Icons.Material.Filled.Person" Color="Color.Primary">Acessar Conta</MudChip>
-                    <MudChip Icon="@Icons.Material.Filled.Extension" Color="Color.Dark">Modelos Curriculos</MudChip>
-                    <MudChip Icon="@Icons.Material.Filled.VerifiedUser" Color="Color.Info">Gerar Banner Perfil</MudChip>
-                    <MudChip Icon="@Icons.Material.Filled.FlightTakeoff" Color="Color.Secondary">Candidaturas</MudChip>
-                </MudStack>
-            </MudPaper>
         </MudPaper>
         <MudPaper Elevation="1" Class="pa-3 ma-2">
-            <MudGrid Justify="Justify.FlexEnd" Class="align-content-center" Spacing="2">
+            <MudGrid Justify="Justify.Center" Class="align-content-center" Spacing="2">
                 @if (!Loading)
                 {
                     <MudItem xs="8">
@@ -80,19 +109,28 @@
                                 <MudExpansionPanel Dense="true" IsExpanded="true" HideIcon="true">
                                     <TitleContent>
                                         <MudStack Justify="Justify.SpaceBetween" Row="true">
-                                            <MudText Typo="Typo.h6" Class="px-4; mt-1">Objetivo</MudText>
+                                        <div class="d-flex flex-column align-center">
+                                            <MudText Typo="Typo.h5" Class="px-4; mt-1"> <b> Vagas </b>de emprego</MudText>
+                                            <MudText Typo="Typo.body1" Class="px-4; mt-1"><b>@Enitties.Count().ToString()</b> oportunidades para você.</MudText>
+                                            </div>
                                             <MudIconButton DisableElevation="true" Disabled="true" Icon="@Icons.Material.Filled.Add" />
                                         </MudStack>
                                         <MudDivider Class="my-2" />
                                     </TitleContent>
                                     <ChildContent>
-                                        @if (@Enitty.Objetivo is not null)
+                                        @if (@Enitties is not null)
                                         {
-                                            <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
-                                                <MudPaper Elevation="1" Width="100%">
-                                                    <CVICardObjetivo ObjetivoResponse="@Enitty.Objetivo" />
+                                            @foreach (var item in @Enitties)
+                                            {
+                                                <MudPaper Elevation="0" Width="100%">
+                                                    <CVICardVagas VagaResponse="@item" />
                                                 </MudPaper>
-                                            </MudStack>
+                                            }
+                                            //<MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                            //    <MudPaper Elevation="1" Width="100%">
+                                            //        <CVICardVagas VagaResponse="Enitty" />
+                                            //    </MudPaper>
+                                            //</MudStack>
                                         }
                                     </ChildContent>
 
@@ -100,7 +138,7 @@
                             </MudPaper>
                         </MudExpansionPanels>
                     </MudItem>
-                   
+
 
                 }
                 else
@@ -124,9 +162,7 @@
                         <MudSkeleton Animation="Animation.Wave" />
                         <MudSkeleton Animation="Animation.Wave" />
                     </MudItem>
-
                 }
-
             </MudGrid>
         </MudPaper>
 

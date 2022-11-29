@@ -21,6 +21,12 @@ namespace CVIServiceWeb.Settings
             services.AddScoped<ILoginRepository, LoginRepository>();
             services.AddScoped<ILoginServices, LoginServices>();
 
+            services.AddScoped<ICandidaturaRepository, CandidaturaRepository>();
+            services.AddScoped<ICandidaturaServices, CandidaturaServices>();
+
+            services.AddScoped<IVagaRepository, VagaRepository>();
+            services.AddScoped<IVagaServices, VagaServices>();
+
             services.AddScoped<ILoginAuthProviderServicesApp, LoginAuthProviderServicesApp>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationState>();
 

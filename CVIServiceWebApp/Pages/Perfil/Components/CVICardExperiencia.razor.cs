@@ -7,14 +7,12 @@ namespace CVIServiceWebApp.Pages.Perfil.Components
     public partial class CVICardExperiencia : CVICard
     {
         [Parameter] public HistoricoProfissionalResponse HistoricoProfissional  { get; set; }
-        public CVICardExperiencia()
-        {
-            
-        }
+ 
        
 
         protected override void OnInitialized()
         {
+            CVICardHeaderAvatar = RenderCardHeaderAvatar();
             CVICardContent = RenderCardContent();
             CVICardHeaderActions = RenderCardHeaderActions();
             CVICardContentActions = RenderCardContentActions();

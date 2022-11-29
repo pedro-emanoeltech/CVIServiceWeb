@@ -14,6 +14,7 @@ namespace CVIServiceWebApp.Pages.Perfil.Components
 
         protected override void OnInitialized()
         {
+            CVICardHeaderAvatar = RenderCardHeaderAvatar();
             CVICardContent = RenderCardContent();
             CVICardHeaderActions = RenderCardHeaderActions();
             CVICardContentActions = RenderCardContentActions();
