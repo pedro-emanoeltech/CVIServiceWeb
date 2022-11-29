@@ -9,21 +9,22 @@
     {
         return
     @<text>
-
-        <MudText Typo="Typo.h6" Class="px-4">Instituicão</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Descricao </MudText>
+        <MudText Typo="Typo.h5" >@VagaResponse.Titulo</MudText>
         <MudDivider Class="my-2" />
-        <MudText Typo="Typo.h6" Class="px-4">Situação</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">Empresa</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse!.NomeEmpresa</MudText>
         <MudDivider Class="my-2" />
-        <MudText Typo="Typo.h6" Class="px-4">Cidade</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">Descrição</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Descricao </MudText>
+        <MudDivider Class="my-2" />
+        <MudText Typo="Typo.h6" Class="px-4">Requisitos</MudText>
         <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Requisitos</MudText>
         <MudDivider Class="my-2" />
-        <MudText Typo="Typo.h6" Class="px-4">Data Incio</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Cidade!.Nome</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">Beneficios</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Beneficio</MudText>
         <MudDivider Class="my-2" />
-        <MudText Typo="Typo.h6" Class="px-4">Data termino</MudText>
-        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.Requisitos</MudText>
+        <MudText Typo="Typo.h6" Class="px-4">Modalidade</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">@VagaResponse.ModalidadeTrabalho.ToString()</MudText>
 
 
     </text>
@@ -31,15 +32,18 @@
     }
     public override RenderFragment RenderCardHeaderActions()
     {
-        return CVICardHeaderActions;
+        return
+      @<text>
+          <MudRating SelectedValue="2" />
+       
+      </text>;
     }
     public override RenderFragment RenderCardContentActions()
     {
         return
     @<text>
-        <MudRating SelectedValue="2" />
         <MudSpacer/>
-        <MudIconButton Icon="@Icons.Material.Filled.Details" Variant="Variant.Text" Color=" Color .Default " />
+        <MudButton Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Send" Color="Color.Primary">Aplicar-se</MudButton>
     </text>;
     }
     public override RenderFragment RenderHeaderContent()

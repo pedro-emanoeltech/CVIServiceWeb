@@ -113,7 +113,7 @@
                                             <MudText Typo="Typo.h5" Class="px-4; mt-1"> <b> Vagas </b>de emprego</MudText>
                                             <MudText Typo="Typo.body1" Class="px-4; mt-1"><b>@Enitties.Count().ToString()</b> oportunidades para você.</MudText>
                                             </div>
-                                            <MudIconButton DisableElevation="true" Disabled="true" Icon="@Icons.Material.Filled.Add" />
+                                            <MudIconButton DisableElevation="true" OnClick="OpenDialogVagaCad" Disabled="false" Icon="@Icons.Material.Filled.Add" />
                                         </MudStack>
                                         <MudDivider Class="my-2" />
                                     </TitleContent>
@@ -145,8 +145,14 @@
                 {
                     <MudItem xs="8">
                         <MudExpansionPanels MultiExpansion="true" Elevation="0">
-                            <MudExpansionPanel Text="Dense" Dense="true">
+                            <MudExpansionPanel Dense="true">
                                 <MudStack AlignItems="AlignItems.Start" Justify="Justify.Center" Row="false">
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
+                                    <MudSkeleton Animation="Animation.Wave" />
                                     <MudSkeleton Animation="Animation.Wave" />
                                     <MudSkeleton Animation="Animation.Wave" />
                                     <MudSkeleton Animation="Animation.Wave" />

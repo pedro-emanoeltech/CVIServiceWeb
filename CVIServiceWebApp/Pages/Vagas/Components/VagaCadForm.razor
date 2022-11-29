@@ -1,0 +1,51 @@
+﻿@using System.ComponentModel.DataAnnotations
+@using CVIServiceLibShared.Constants.Enums;
+
+<EditForm Model="@VagaRequest">
+    <DataAnnotationsValidator />
+    <MudGrid>
+        <MudItem xs="12">
+            <MudCard>
+                <MudCardContent>
+                    <MudGrid>
+                        <MudItem xs="4">
+                            <MudTextField Label="Titulo Vaga" Class="mt-3"
+                                          @bind-Value="VagaRequest.Titulo" For="@(() => VagaRequest.Titulo)" />
+                        </MudItem>
+                        <MudItem xs="3">
+                            <MudSelect Label="Modalidade de Trabalho"
+                                       Margin="Margin.Dense"
+                                       Dense="true"
+                                       Variant="Variant.Outlined" @bind-Value="VagaRequest.ModalidadeTrabalho" Text="@(VagaRequest.ModalidadeTrabalho.ToString())">
+                                @foreach (ModalidadeTrabalho item in Enum.GetValues(typeof(ModalidadeTrabalho)))
+                                {
+                                    <MudSelectItem Value="@item">@item.ToString()</MudSelectItem>
+                                }
+                            </MudSelect>
+                        </MudItem>
+                    </MudGrid>
+
+                    <MudTextField Label="Nome Empresa"
+                                  @bind-Value="VagaRequest.NomeEmpresa" For="@(() => VagaRequest.NomeEmpresa)" />
+
+                    <MudTextField Label="Descrição Vaga" Class="mt-3" Variant="Variant.Text" HelperText="Informe uma breve descrição" Lines="3"
+                                  @bind-Value="VagaRequest.Descricao" For="@(() => VagaRequest.Descricao)" />
+
+                    <MudTextField Label="Requisitos" HelperText="Informe os requisitos da vaga" Class="mt-3"
+                                  @bind-Value="VagaRequest.Requisitos" For="@(() => VagaRequest.Requisitos)" InputType="InputType.Text" Lines="3" />
+
+                    <MudTextField Label="Beneficios" Class="mt-3" InputType="InputType.Text" Lines="3"
+                                  @bind-Value="VagaRequest.Beneficio" For="@(() => VagaRequest.Beneficio)" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" OnClick="@Registrar" Class="ml-auto">Cadastrar</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+@code {
+
+
+}
